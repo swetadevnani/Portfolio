@@ -1,0 +1,6 @@
+node_modules/
+.next/
+.DS_Store
+
+# Large media file – keep locally but don't push to GitHub
+public/images/usher-mockup.mp4
