@@ -77,7 +77,7 @@ export default function About() {
               {/* Main image container */}
               <div className="relative bg-background rounded-3xl overflow-hidden aspect-[4/5] shadow-card">
                 <img
-                  src="/images/sweta.jpg"
+                  src="/images/sweta.JPG"
                   alt={`${siteConfig.name} — UX & Product Designer`}
                   className="w-full h-full object-cover object-top"
                 />
