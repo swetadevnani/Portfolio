@@ -13,7 +13,6 @@ export const siteConfig = {
   resumeUrl: '/resume.pdf', // Put your resume PDF in public/resume.pdf (or change path and add file to public/)
   social: {
     linkedin: 'https://www.linkedin.com/in/sweta-devnani/',
-    behance: 'https://www.behance.net/swetadevnani1',
     email: 'mailto:swetaux@gmail.com',
   },
 }
@@ -156,4 +155,5 @@ export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
+  { label: 'Resume', href: 'https://drive.google.com/file/d/1BDb24SKa61eZT7dn6BfbzG24wJ1aM0WS/view?usp=sharing', external: true },
 ]
