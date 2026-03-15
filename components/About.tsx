@@ -85,8 +85,8 @@ export default function About() {
 
               {/* Floating tag */}
               <div className="absolute -bottom-5 -left-5 bg-primary text-background rounded-2xl px-5 py-3 shadow-card">
-                <div className="font-sans text-xs font-medium opacity-80 mb-0.5">Based in</div>
-                <div className="font-sans text-sm font-semibold">{siteConfig.location}</div>
+                <div className="font-sans text-xs font-medium opacity-80 mb-0.5">Based in PA</div>
+                <div className="font-sans text-sm font-semibold">Open to relocation</div>
               </div>
             </div>
           </motion.div>
