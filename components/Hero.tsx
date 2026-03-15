@@ -104,13 +104,13 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <button onClick={scrollToWork} className="btn-primary text-base">
+            <a href="#work" onClick={(e) => { e.preventDefault(); scrollToWork(); }} className="btn-primary text-base inline-flex items-center gap-2">
               View My Work
               <ArrowDown size={16} />
-            </button>
-            <button onClick={scrollToContact} className="btn-secondary text-base">
+            </a>
+            <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToContact(); }} className="btn-secondary text-base inline-flex items-center justify-center">
               Get In Touch
-            </button>
+            </a>
           </div>
 
           {/* Scroll indicator */}
