@@ -76,7 +76,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="https://drive.google.com/file/d/1BDb24SKa61eZT7dn6BfbzG24wJ1aM0WS/view?usp=sharing"
+              href={siteConfig.resumeViewUrl}
               className="btn-primary text-sm py-2.5 px-5"
               target="_blank"
               rel="noopener noreferrer"
@@ -121,7 +121,7 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="https://drive.google.com/file/d/1BDb24SKa61eZT7dn6BfbzG24wJ1aM0WS/view?usp=sharing"
+                href={siteConfig.resumeViewUrl}
                 className="btn-primary w-fit text-sm"
                 target="_blank"
                 rel="noopener noreferrer"

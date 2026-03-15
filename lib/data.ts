@@ -10,7 +10,8 @@ export const siteConfig = {
   email: 'swetaux@gmail.com',
   location: 'Philadelphia, PA',
   availableForWork: true,
-  resumeUrl: '/resume.pdf', // Put your resume PDF in public/resume.pdf (or change path and add file to public/)
+  resumeUrl: '/resume.pdf', // Contact "Download Resume" only — PDF in public/resume.pdf
+  resumeViewUrl: 'https://drive.google.com/file/d/1riBZUY55E3gFgtdgGoybcfz3wazJQImW/view?usp=sharing', // Header & footer "Resume" — opens in new tab
   // Usher mockup video: too large for GitHub when self-hosted. Set to a YouTube/Vimeo embed URL to show on live site, or leave '' to use local /images/usher-mockup.mp4 (only works after compress + remove from .gitignore).
   usherMockupVideoUrl: 'https://www.youtube.com/embed/PzlW5SrnGI8',
   social: {
@@ -22,7 +23,7 @@ export const siteConfig = {
 export const aboutContent = {
   headline: 'Designing with intention, building with empathy.',
   bio: [
-    "I'm a Product Designer based in Philadelphia, focused on designing thoughtful digital experiences that solve real problems. I began my journey in UX design and naturally grew into product design as I became more involved in shaping not just interfaces, but the strategy, structure, and outcomes of the products themselves.",
+    "I'm a Product Designer focused on designing thoughtful digital experiences that solve real problems. I began my journey in UX design and naturally grew into product design as I became more involved in shaping not just interfaces, but the strategy, structure, and outcomes of the products themselves.",
     "I enjoy working on AI/ML products, consumer applications, and early-stage (0→1) products, where design plays a key role in turning complex ideas into intuitive experiences. My approach combines rapid prototyping, continuous iteration, and data-informed decision making. I take end-to-end ownership of the design process, from understanding user needs to delivering implementation-ready solutions.",
     "I work closely with product managers to shape product direction and partner with engineers to ensure designs translate smoothly into shipped products. Outside of work, I enjoy reading, cycling around the city, and attending networking events to meet and learn from people across the design and tech community.",
   ],
@@ -157,5 +158,5 @@ export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
-  { label: 'Resume', href: 'https://drive.google.com/file/d/1BDb24SKa61eZT7dn6BfbzG24wJ1aM0WS/view?usp=sharing', external: true },
+  { label: 'Resume', href: 'https://drive.google.com/file/d/1riBZUY55E3gFgtdgGoybcfz3wazJQImW/view?usp=sharing', external: true },
 ]
