@@ -12,7 +12,7 @@ export const siteConfig = {
   availableForWork: true,
   resumeUrl: '/resume.pdf', // Put your resume PDF in public/resume.pdf (or change path and add file to public/)
   // Usher mockup video: too large for GitHub when self-hosted. Set to a YouTube/Vimeo embed URL to show on live site, or leave '' to use local /images/usher-mockup.mp4 (only works after compress + remove from .gitignore).
-  usherMockupVideoUrl: 'https://youtube.com/shorts/PzlW5SrnGI8?feature=share',
+  usherMockupVideoUrl: 'https://www.youtube.com/embed/PzlW5SrnGI8',
   social: {
     linkedin: 'https://www.linkedin.com/in/sweta-devnani/',
     email: 'mailto:swetaux@gmail.com',
@@ -22,9 +22,9 @@ export const siteConfig = {
 export const aboutContent = {
   headline: 'Designing with intention, building with empathy.',
   bio: [
-    "I'm a UX & Product Designer based in Philadelphia who tries to understand the \"why\" behind everything — both in design and in life. My work spans end-to-end product design: from research and ideation to interaction design and final handoff.",
-    "I studied User Experience & Interaction Design at Thomas Jefferson University, where I also conducted research on AI chatbots to enhance the design ideation process. I've worked on projects ranging from e-commerce platforms and gaming events to mobile apps and design systems — and I'm currently open to new collaborations.",
-    "When I'm not designing, I'm writing about UX on Medium, exploring how RTL design challenges our assumptions, or thinking about how AI is reshaping the creative process.",
+    "I'm a Product Designer based in Philadelphia, focused on designing thoughtful digital experiences that solve real problems. I began my journey in UX design and naturally grew into product design as I became more involved in shaping not just interfaces, but the strategy, structure, and outcomes of the products themselves.",
+    "I enjoy working on AI/ML products, consumer applications, and early-stage (0→1) products, where design plays a key role in turning complex ideas into intuitive experiences. My approach combines rapid prototyping, continuous iteration, and data-informed decision making. I take end-to-end ownership of the design process, from understanding user needs to delivering implementation-ready solutions.",
+    "I work closely with product managers to shape product direction and partner with engineers to ensure designs translate smoothly into shipped products. Outside of work, I enjoy reading, cycling around the city, and attending networking events to meet and learn from people across the design and tech community.",
   ],
   highlights: [
     { label: 'Years of Experience', value: '4+' },

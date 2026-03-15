@@ -8,6 +8,23 @@ import CaseStudyHeader from '@/components/CaseStudyHeader'
 import Footer from '@/components/Footer'
 import { siteConfig } from '@/lib/data'
 
+/** Convert YouTube watch/shorts URL to embed URL for iframe; adds autoplay, mute, and loop. */
+function toYouTubeEmbedUrl(url: string): string {
+  if (!url) return ''
+  try {
+    const u = new URL(url)
+    const id =
+      u.searchParams.get('v') ||
+      (u.pathname.startsWith('/shorts/') && u.pathname.split('/shorts/')[1]?.split('/')[0]) ||
+      (u.pathname.startsWith('/embed/') && u.pathname.split('/embed/')[1]?.split('/')[0])
+    if (!id) return url
+    const params = new URLSearchParams({ autoplay: '1', mute: '1', loop: '1', playlist: id })
+    return `https://www.youtube.com/embed/${id}?${params.toString()}`
+  } catch {
+    return url
+  }
+}
+
 // ─── Reusable animation helpers ────────────────────────────────────────────
 
 function FadeUp({
@@ -414,7 +431,7 @@ export default function UsherCaseStudy() {
             >
               {siteConfig.usherMockupVideoUrl ? (
                 <iframe
-                  src={siteConfig.usherMockupVideoUrl}
+                  src={toYouTubeEmbedUrl(siteConfig.usherMockupVideoUrl)}
                   title="Usher prototype walkthrough"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   allow="autoplay; fullscreen"
