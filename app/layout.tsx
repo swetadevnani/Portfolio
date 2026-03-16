@@ -1,6 +1,9 @@
+import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { DM_Serif_Display, DM_Sans } from 'next/font/google'
 import './globals.css'
+
+
 
 const dmSerifDisplay = DM_Serif_Display({
   weight: ['400'],
@@ -68,6 +71,7 @@ export default function RootLayout({
     >
       <body className="bg-background text-text font-sans antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   )
