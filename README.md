@@ -1,6 +1,6 @@
-# Shweta — UX & Product Designer Portfolio
+# Product Designer_Sweta
 
-A warm, personal portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion. Designed to showcase SaaS and web product design work.
+Product Designer who turns research into high-impact, AI-enabled products, delivering measurable outcomes from concept to launch.
 
 ## Getting Started
 
