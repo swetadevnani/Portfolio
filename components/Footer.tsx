@@ -19,9 +19,9 @@ export default function Footer() {
   return (
     <footer className="bg-surface border-t border-border">
       <div className="container-inner px-6 md:px-8 lg:px-12 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex w-full flex-col items-center justify-between gap-8 md:flex-row md:items-center">
           {/* Name + copyright */}
-          <div className="text-center md:text-left">
+          <div className="w-full text-center md:w-auto md:text-left">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="font-display text-lg text-text hover:text-primary transition-colors duration-200 mb-1 block"
@@ -34,8 +34,11 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Nav links */}
-          <nav className="flex items-center gap-6" aria-label="Footer navigation">
+          {/* Nav links — wrap on small screens so nothing overflows */}
+          <nav
+            className="flex w-full max-w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 px-1 md:w-auto md:flex-nowrap md:gap-6 md:px-0"
+            aria-label="Footer navigation"
+          >
             {navLinks.map((link) =>
               link.external ? (
                 <a
@@ -43,7 +46,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-sans text-sm text-text-secondary hover:text-primary transition-colors duration-200"
+                  className="font-sans text-xs text-text-secondary transition-colors duration-200 hover:text-primary sm:text-sm"
                 >
                   {link.label}
                 </a>
@@ -51,7 +54,7 @@ export default function Footer() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="font-sans text-sm text-text-secondary hover:text-primary transition-colors duration-200"
+                  className="font-sans text-xs text-text-secondary transition-colors duration-200 hover:text-primary sm:text-sm"
                   onClick={(e) => {
                     e.preventDefault()
                     handleNavClick(link.href)
@@ -64,7 +67,7 @@ export default function Footer() {
           </nav>
 
           {/* Social icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center justify-center gap-3 md:justify-end">
             {socialIcons.map(({ label, href, icon: Icon }) => (
               <a
                 key={label}

@@ -39,10 +39,10 @@ export default function Contact() {
               </p>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="group inline-flex items-center gap-3 bg-primary text-background rounded-full px-8 py-4 font-sans font-medium text-lg hover:bg-primary-dark transition-all duration-200 hover:shadow-card-hover hover:-translate-y-0.5 mb-6"
+                className="group mx-auto mb-6 inline-flex max-w-full flex-row items-center justify-center gap-2 rounded-full bg-primary px-3 py-3 font-sans text-xs font-medium leading-none text-background transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-card-hover sm:gap-3 sm:px-8 sm:py-4 sm:text-lg"
               >
-                <Mail size={20} />
-                {siteConfig.email}
+                <Mail className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" aria-hidden />
+                <span className="whitespace-nowrap">{siteConfig.email}</span>
               </a>
               <div className="mb-12">
                 <a

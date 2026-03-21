@@ -344,7 +344,7 @@ export default function ConstantCaseStudy() {
               numbers, but the support infrastructure isn&apos;t reaching them.
             </p>
           </FadeUp>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             <StatCard value="87%" label="of college students feel overwhelmed by their academic workload" delay={0} />
             <StatCard value="76%" label="experience moderate to severe psychological distress" delay={0.08} />
             <StatCard value="33%" label="received any mental health services in the past year" delay={0.16} />
@@ -835,9 +835,9 @@ export default function ConstantCaseStudy() {
                   </div>
 
                   {/* ── Before / After screenshots ── */}
-                  <div className="flex justify-center items-end gap-12 px-7 pb-7">
+                  <div className="flex flex-col items-center gap-6 px-4 pb-6 sm:px-6 md:flex-row md:items-end md:justify-center md:gap-8 md:px-7 lg:gap-12 md:pb-7">
                     {/* Before */}
-                    <div className="flex flex-col items-center gap-3">
+                    <div className="flex w-full max-w-[min(100%,280px)] flex-col items-center gap-3 sm:max-w-[min(100%,320px)] md:w-auto md:max-w-none">
                       <span className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold text-text-muted uppercase tracking-wider">
                         <span className="w-1.5 h-1.5 rounded-full bg-text-muted" />
                         Before
@@ -845,11 +845,16 @@ export default function ConstantCaseStudy() {
                       <PhoneFrame src={item.before.src} alt={item.before.alt} />
                     </div>
 
-                    {/* Arrow divider */}
-                    <div className="flex items-center pb-6 text-primary text-xl">→</div>
+                    {/* Arrow divider — vertical flow on mobile, horizontal on md+ */}
+                    <div
+                      className="flex shrink-0 items-center justify-center py-1 text-primary md:pb-6 md:text-xl"
+                      aria-hidden
+                    >
+                      <span className="block rotate-90 leading-none md:rotate-0">→</span>
+                    </div>
 
                     {/* After — with themed highlight annotations */}
-                    <div className="flex flex-col items-center gap-3">
+                    <div className="flex w-full max-w-[min(100%,280px)] flex-col items-center gap-3 sm:max-w-[min(100%,320px)] md:w-auto md:max-w-none">
                       <span className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold text-primary uppercase tracking-wider">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                         After
@@ -965,13 +970,13 @@ export default function ConstantCaseStudy() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="section-label mb-2">Next Project</p>
-              <h3 className="font-display text-3xl text-text">Usher — AI Academic App</h3>
+              <h3 className="font-display text-3xl text-text">Sharp Website Redesign</h3>
               <p className="font-sans text-sm text-text-secondary mt-2">
-                Thesis capstone · Mobile design · 92% task success rate
+                Design Systems · Atomic Design · Web Design
               </p>
             </div>
             <Link
-              href="/work/usher"
+              href="/work/sharp"
               className="btn-secondary inline-flex items-center gap-2 shrink-0"
             >
               View Case Study

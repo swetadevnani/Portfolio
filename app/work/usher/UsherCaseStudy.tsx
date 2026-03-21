@@ -777,16 +777,16 @@ export default function UsherCaseStudy() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="section-label mb-2">Next Project</p>
-              <h3 className="font-display text-3xl text-text">Sharp Website Redesign</h3>
+              <h3 className="font-display text-3xl text-text">Constant Mobile App</h3>
               <p className="font-sans text-sm text-text-secondary mt-2">
-                Design systems · Atomic design · 50% increase in inbound inquiries
+                Mobile Design · Habit Design · Wellness
               </p>
             </div>
             <Link
-              href="/#work"
+              href="/work/constant"
               className="btn-secondary inline-flex items-center gap-2 shrink-0"
             >
-              View All Work
+              View project
               <ArrowUpRight size={16} />
             </Link>
           </FadeUp>
