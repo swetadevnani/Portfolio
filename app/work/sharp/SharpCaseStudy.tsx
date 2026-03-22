@@ -810,7 +810,7 @@ export default function SharpCaseStudy() {
               </div>
               <Link
                 href="/work/usher"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-background font-sans text-sm font-semibold hover:bg-primary/90 transition-colors duration-200 flex-shrink-0"
+                className="btn-secondary inline-flex items-center gap-2 text-sm flex-shrink-0"
               >
                 View Case Study
                 <ArrowUpRight size={14} />
