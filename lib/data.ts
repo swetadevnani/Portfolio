@@ -6,7 +6,7 @@ export const siteConfig = {
   name: 'Sweta',
   fullName: 'Sweta Devnani',
   role: 'UX & Product Designer',
-  tagline: 'UX & Product Designer focused on SaaS, web, and mobile products, where clarity, empathy, and intent drive every decision.',
+  tagline: 'From research to execution, I turn ideas into thoughtful experiences across SaaS, web, and mobile.',
   email: 'swetaux@gmail.com',
   location: 'Philadelphia, PA',
   availableForWork: true,

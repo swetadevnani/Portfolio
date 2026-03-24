@@ -8,25 +8,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Warm, approachable palette inspired by terracotta + cream
+        // Clean white + grey + pink palette
         primary: {
-          DEFAULT: '#C1694F',   // Warm terracotta
-          light: '#D98A74',     // Lighter terracotta
-          dark: '#9E4E38',      // Deeper terracotta
+          DEFAULT: '#C0305E',   // Accessible deep pink (5.1:1 on white)
+          light: '#E84774',     // Vibrant pink for decorative use
+          dark: '#8B1A3C',      // Deep rose
         },
-        background: '#FAF7F2',  // Warm cream off-white
-        surface: '#F2EDE5',     // Slightly elevated warm neutral for cards
-        'surface-dark': '#E8E0D4', // Deeper surface for hover states
+        background: '#FAFAFA',  // Near white
+        surface: '#F2F2F2',     // Light grey card surface
+        'surface-dark': '#E8E8E8', // Deeper grey hover
         text: {
-          DEFAULT: '#2C2420',   // Deep warm charcoal
-          secondary: '#6B5B52', // Muted warm brown for secondary text
-          muted: '#9C8B82',     // Muted for hints and captions
+          DEFAULT: '#1A1A1A',   // Near black
+          secondary: '#666666', // Mid grey
+          muted: '#9A9A9A',     // Light grey hints
         },
         accent: {
-          DEFAULT: '#E8A87C',   // Warm amber accent
-          light: '#F2C9A8',     // Light amber
+          DEFAULT: '#E84774',   // Pink accent
+          light: '#F7A0B8',     // Soft pink
         },
-        border: '#DDD5C8',      // Soft warm border
+        border: '#E0E0E0',      // Light grey border
       },
       fontFamily: {
         display: ['var(--font-dm-serif)', 'Georgia', 'serif'],

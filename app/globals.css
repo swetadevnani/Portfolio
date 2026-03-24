@@ -8,8 +8,8 @@
   }
 
   body {
-    background-color: #FAF7F2;
-    color: #2C2420;
+    background-color: #FAFAFA;
+    color: #1A1A1A;
     font-family: var(--font-dm-sans), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -17,13 +17,13 @@
 
   /* Selection color */
   ::selection {
-    background-color: #D98A74;
-    color: #FAF7F2;
+    background-color: #C0305E;
+    color: #FAFAFA;
   }
 
   /* Focus styles */
   :focus-visible {
-    outline: 2px solid #C1694F;
+    outline: 2px solid #C0305E;
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -34,16 +34,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #F2EDE5;
+    background: #F2F2F2;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #DDD5C8;
+    background: #E0E0E0;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #C1694F;
+    background: #C0305E;
   }
 }
 
@@ -91,12 +91,10 @@
   }
 
   .gradient-warm {
-    background: linear-gradient(135deg, #FAF7F2 0%, #F2EDE5 100%);
+    background: linear-gradient(135deg, #FAFAFA 0%, #F2F2F2 100%);
   }
 
   .gradient-hero {
-    background: radial-gradient(ellipse at 70% 50%, rgba(193, 105, 79, 0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 30% 80%, rgba(232, 168, 124, 0.06) 0%, transparent 50%),
-                #FAF7F2;
+    background: #FAFAFA;
   }
 }

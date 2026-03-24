@@ -12,7 +12,7 @@ export default function Contact() {
             aria-hidden="true"
             className="absolute -top-20 -right-20 w-80 h-80 rounded-full opacity-10 pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, #C1694F 0%, transparent 70%)',
+              background: 'radial-gradient(circle, #B46258 0%, transparent 70%)',
               filter: 'blur(50px)',
             }}
           />
@@ -23,7 +23,7 @@ export default function Contact() {
             >
               <svg viewBox="0 0 200 200" fill="none">
                 {[20, 50, 80, 110, 140].map((r) => (
-                  <circle key={r} cx="200" cy="0" r={r} stroke="#C1694F" strokeWidth="1" />
+                  <circle key={r} cx="200" cy="0" r={r} stroke="#B46258" strokeWidth="1" />
                 ))}
               </svg>
             </div>

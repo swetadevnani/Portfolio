@@ -56,7 +56,11 @@ function CardContent({ study }: { study: CaseStudy }) {
             ))}
           </div>
         )}
-        {!study.comingSoon && (
+        {study.comingSoon ? (
+          <span className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-text-muted">
+            Coming Soon
+          </span>
+        ) : (
           <span className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-200">
             <span className="underline underline-offset-4 decoration-primary/40 group-hover:decoration-primary transition-colors duration-200">
               View Case Study
