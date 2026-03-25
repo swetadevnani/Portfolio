@@ -84,6 +84,10 @@ export default function RootLayout({
             gtag('config', 'G-FE82FK64YV');
           `}
         </Script>
+        <Script
+          src="https://t.contentsquare.net/uxa/b37124dc81173.js"
+          strategy="afterInteractive"
+        />
         <Analytics />
       </body>
     </html>
