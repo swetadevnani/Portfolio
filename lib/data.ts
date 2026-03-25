@@ -5,7 +5,7 @@
 export const siteConfig = {
   name: 'Sweta',
   fullName: 'Sweta Devnani',
-  role: 'UX & Product Designer',
+  role: 'Product Designer',
   tagline: 'From research to execution, I turn ideas into thoughtful experiences across SaaS, web, and mobile.',
   email: 'swetaux@gmail.com',
   location: 'Philadelphia, PA',
@@ -59,7 +59,7 @@ export const caseStudies: CaseStudy[] = [
     role: 'UX Designer',
     description:
       'Led end-to-end discovery research for a caregiving platform serving elderly users and family caregivers. Defined MVP scope through comprehensive usability studies and competitive analysis.',
-    tags: ['UX Research', 'Accessibility', 'WCAG 2.1 AA'],
+    tags: ['UX Research', 'Accessibility', 'Web Design'],
     comingSoon: true,
     image: 'nestaid.png',
     accentColor: '#C1694F',
@@ -98,7 +98,7 @@ export const caseStudies: CaseStudy[] = [
     role: 'UX Designer',
     description:
       'Minimized support queries and increased user confidence by making product functionality instantly understandable through an interactive virtual clock within a streamlined e-commerce experience.',
-    tags: ['Design Systems', 'Atomic Design', 'Web Design'],
+    tags: ['Design Systems', 'Responsive Design', 'Web Design'],
     metrics: ['40% projected reduction in customer support calls', '6 usability tests conducted', '16-week end-to-end product design'],
     image: 'sharp.png',
     accentColor: '#C1694F',

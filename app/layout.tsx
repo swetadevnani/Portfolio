@@ -21,12 +21,12 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Sweta — UX & Product Designer',
+  title: 'Sweta — Product Designer',
   icons: {
     icon: '/icon.svg',
   },
   description:
-    'Portfolio of Sweta Devnani, a UX and product designer based in Philadelphia. Crafting intuitive, human-centered digital experiences across mobile, web, and AI-powered products.',
+    'Product Designer with experience in UX/UI design for SaaS platforms and mobile applications. Skilled in user research, interaction design, design systems, and usability testing. I build and ship high-quality digital products using tools like Claude Code, Cursor, and Vercel, focusing on performance, accessibility, and scalable user experiences.',
   keywords: [
     'UX Designer',
     'Product Designer',
@@ -35,11 +35,22 @@ export const metadata: Metadata = {
     'Mobile Design',
     'AI Design',
     'Sweta Devnani',
+    'Claude Code',
+    'Cursor',
+    'Vercel',
+    'UX/UI',
+    'User Research',
+    'Interaction Design',
+    'Usability Testing',
+    'Performance',
+    'Accessibility',
+    'Scalable User Experiences',
+    'New York Designer'
   ],
   authors: [{ name: 'Sweta' }],
   creator: 'Sweta',
   openGraph: {
-    title: 'Sweta — UX & Product Designer',
+    title: 'Sweta — Product Designer',
     description:
       'Portfolio of Sweta, a UX and product designer specializing in SaaS web products.',
     url: 'https://shweta.design',
