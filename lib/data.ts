@@ -11,7 +11,7 @@ export const siteConfig = {
   location: 'Philadelphia, PA',
   availableForWork: true,
   resumeUrl: '/resume.pdf', // Contact "Download Resume" only — PDF in public/resume.pdf
-  resumeViewUrl: 'https://drive.google.com/file/d/1jVhDz5JuOGFUz-IILqQlglMrrTTOn1jL/view?usp=sharing', // Header & footer "Resume" — opens in new tab
+  resumeViewUrl: 'https://drive.google.com/file/d/10WQEmdT2TUDpfqBPFgd7_wXS1lElPY9m/view?usp=sharing', // Header & footer "Resume" — opens in new tab
   // Usher mockup video: too large for GitHub when self-hosted. Set to a YouTube/Vimeo embed URL to show on live site, or leave '' to use local /images/usher-mockup.mp4 (only works after compress + remove from .gitignore).
   usherMockupVideoUrl: 'https://www.youtube.com/embed/PzlW5SrnGI8',
   social: {
@@ -158,5 +158,5 @@ export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
-  { label: 'Resume', href: 'https://drive.google.com/file/d/1jVhDz5JuOGFUz-IILqQlglMrrTTOn1jL/view?usp=sharing', external: true },
+  { label: 'Resume', href: 'https://drive.google.com/file/d/10WQEmdT2TUDpfqBPFgd7_wXS1lElPY9m/view?usp=sharing', external: true },
 ]
