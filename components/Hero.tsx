@@ -36,13 +36,15 @@ export default function Hero() {
             </p>
 
             {/* Main heading */}
-            <h1 className="font-display text-5xl md:text-6xl lg:text-6xl text-text leading-tight mb-6">
-              I design, build, and ship products
+            <h1 className="font-display text-[44px] md:text-[56px] lg:text-[56px] text-text leading-[1.22] mb-6">
+              I research, design,
+              <br />
+              and build products.
             </h1>
 
             {/* Subtitle */}
             <p className="font-sans text-lg text-text-secondary leading-relaxed mb-10">
-              From research to execution, I turn ideas into usable experiences across SaaS, web, and mobile.
+              Product designer blending empathy, visual thinking, and fast execution across SaaS, web, and mobile.
             </p>
 
             {/* CTA */}
