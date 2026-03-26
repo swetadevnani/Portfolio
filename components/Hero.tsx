@@ -44,7 +44,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="font-sans text-lg text-text-secondary leading-relaxed mb-10">
-              Product designer blending empathy, visual thinking, and fast execution across SaaS, web, and mobile.
+              Product designer with 2+ YOE building 0→1 products in fast-paced startups, focused on empathy-driven design, visual thinking, and rapid execution across SaaS, web, and mobile.
             </p>
 
             {/* CTA */}
