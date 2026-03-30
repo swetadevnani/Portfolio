@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname, useRouter } from 'next/navigation'
 import { Linkedin, Mail } from 'lucide-react'
 import { siteConfig, navLinks } from '@/lib/data'
 
@@ -10,10 +11,20 @@ const socialIcons = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const pathname = usePathname()
+  const router = useRouter()
 
   const handleNavClick = (href: string) => {
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (href.startsWith('#')) {
+      if (pathname === '/') {
+        const el = document.querySelector(href)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      } else {
+        router.push('/' + href)
+      }
+    } else {
+      router.push(href)
+    }
   }
 
   return (
@@ -23,7 +34,7 @@ export default function Footer() {
           {/* Name + copyright */}
           <div className="w-full text-center md:w-auto md:text-left">
             <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => pathname === '/' ? window.scrollTo({ top: 0, behavior: 'smooth' }) : router.push('/')}
               className="font-display text-lg text-text hover:text-primary transition-colors duration-200 mb-1 block"
             >
               {siteConfig.name}

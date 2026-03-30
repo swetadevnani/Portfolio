@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { siteConfig, navLinks } from '@/lib/data'
@@ -8,6 +9,8 @@ import { siteConfig, navLinks } from '@/lib/data'
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +33,15 @@ export default function Header() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false)
-    const el = document.querySelector(href)
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' })
+    if (href.startsWith('#')) {
+      if (pathname === '/') {
+        const el = document.querySelector(href)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      } else {
+        router.push('/' + href)
+      }
+    } else {
+      router.push(href)
     }
   }
 
@@ -48,11 +57,15 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Wordmark */}
           <a
-            href="#"
+            href="/"
             className="font-display text-xl text-text hover:text-primary transition-colors duration-200"
             onClick={(e) => {
               e.preventDefault()
-              window.scrollTo({ top: 0, behavior: 'smooth' })
+              if (pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              } else {
+                router.push('/')
+              }
             }}
           >
             {siteConfig.name}

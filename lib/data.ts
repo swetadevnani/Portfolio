@@ -153,8 +153,39 @@ export const skillCategories: SkillCategory[] = [
   },
 ]
 
+export type ResearchProject = {
+  id: string
+  title: string
+  description: string
+  tags: string[]
+  metrics?: string[]
+  href: string
+  image: string
+}
+
+export const researchProjects: ResearchProject[] = [
+  {
+    id: 'library-utilization',
+    title: 'Study of Utilization of Library Resources',
+    description:
+      'Mixed-method UX research conducted for the Usher Project, examining how students at Thomas Jefferson University discover, access, and engage with library resources. The study identifies key friction points, usage gaps, and behavioral patterns to inform more accessible and student-centered library experiences.',
+    tags: ['Mixed Methods', 'Behavioral Insights', 'Research Synthesis'],
+    image: 'research-library.png',
+    href: 'https://drive.google.com/file/d/1bXLizv_gp4I1xj57GtVQI7nkN1GxuRiX/view?usp=sharing',
+  },
+  {
+    id: 'ai-chatbots-design',
+    title: 'Usage of AI Chatbots in Design Ideation',
+    description:
+      'Collaborative research on how architecture students integrate AI tools into early-stage ideation. Synthesized insights from 12 students and 2 faculty to propose curriculum-level improvements for effective AI adoption.',
+    tags: ['AI in Design', 'Opportunity Mapping', 'Stakeholder Alignment'],
+    image: 'research-ai-chatbots.png',
+    href: 'https://drive.google.com/file/d/1E8sz1nFck0HW3jt8b_Cy6ibEN63bOcD3/view?usp=sharing',
+  },
+]
+
 export const navLinks = [
-  { label: 'Work', href: '#work' },
+  { label: 'Work', href: '/work' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },

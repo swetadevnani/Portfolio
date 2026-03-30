@@ -42,7 +42,7 @@ export default function HeroAnimation() {
       >
         <defs>
           <filter id="shape-shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="0" dy="10" stdDeviation="20" floodColor="rgba(0,0,0,0.15)" />
+            <feDropShadow dx="0" dy="12" stdDeviation="28" floodColor="rgba(0,0,0,0.22)" />
           </filter>
         </defs>
 
@@ -92,8 +92,10 @@ export default function HeroAnimation() {
         {badges.map((badge) => {
           const dur = (3.5 + (badge.delay % 1.2)) * SPEED
           const txValues = badge.dx
-            ? `${-badge.dx} 0;${badge.dx} 0;${-badge.dx} 0`
-            : `0 ${-badge.dy};0 ${badge.dy};0 ${-badge.dy}`
+            ? `0 0;${badge.dx} 0;0 0;${-badge.dx} 0;0 0`
+            : `0 0;0 ${badge.dy};0 0;0 ${-badge.dy};0 0`
+          const keyTimes = '0;0.25;0.5;0.75;1'
+          const keySplines = '0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1'
           return (
             <g
               key={badge.label}
@@ -104,10 +106,11 @@ export default function HeroAnimation() {
                   attributeName="transform"
                   type="translate"
                   values={txValues}
+                  keyTimes={keyTimes}
                   dur={`${dur}s`}
                   repeatCount="indefinite"
                   calcMode="spline"
-                  keySplines="0.45 0 0.55 1;0.45 0 0.55 1"
+                  keySplines={keySplines}
                 />
                 <rect
                   x={badge.x} y={badge.y}
