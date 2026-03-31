@@ -46,7 +46,7 @@ export default function AboutPage() {
               />
               <div className="relative bg-surface rounded-3xl overflow-hidden aspect-[4/5] shadow-card">
                 <img
-                  src="/images/sweta.JPG"
+                  src="/images/aboutme.jpg"
                   alt={siteConfig.fullName}
                   className="w-full h-full object-cover object-top"
                 />
