@@ -85,7 +85,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
             <FadeIn delay={0.1}>
               <p className="font-sans text-base text-text-secondary leading-relaxed">
-                With 4+ years of experience across SaaS, mobile, and web, my process is rooted in empathy — understanding people deeply before touching a single frame. I take end-to-end ownership, from messy early research to polished handoffs.
+                With 2+ years of experience across SaaS, mobile, and web, my process is rooted in empathy — understanding people deeply before touching a single frame. I take end-to-end ownership, from messy early research to polished handoffs.
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>
@@ -201,7 +201,7 @@ export default function AboutPage() {
               Reading
             </p>
             <h3 className="font-display text-3xl md:text-4xl text-text mb-5">
-              I read a lot — mostly non-fiction.
+              Books are my best friend
             </h3>
             <p className="font-sans text-base text-text-secondary leading-relaxed">
               Books are how I think through ideas I can&apos;t yet articulate. I gravitate towards psychology, design, human behavior, and the occasional novel I can&apos;t put down. There&apos;s usually one open on my nightstand and one on my phone.
