@@ -54,16 +54,15 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: 'nestaid',
-    title: 'NestAid — Caregiving SaaS Platform',
-    context: 'Product Design · UX Research',
-    role: 'UX Designer',
+    title: 'NestAid — AI-Powered Caregiving Operations',
+    context: 'SaaS · AI Agents · Product Design',
+    role: 'Product Designer',
     description:
-      'Led end-to-end discovery research for a caregiving platform serving elderly users and family caregivers. Defined MVP scope through comprehensive usability studies and competitive analysis.',
-    tags: ['UX Research', 'Accessibility', 'Web Design'],
-    comingSoon: true,
+      'Conducted secondary research that pivoted NestAid from a B2C caregiving marketplace to a B2B AI operations platform — powered by Nessa, an AI agent that automates scheduling and workforce management for caregiving agencies.',
+    tags: ['SaaS', 'AI Agents', 'UX Research'],
     image: 'nestaid.png',
     accentColor: '#C1694F',
-    href: '#nestaid',
+    href: '/work/nestaid',
   },
   {
     id: 'usher',
