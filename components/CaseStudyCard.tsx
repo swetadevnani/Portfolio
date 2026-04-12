@@ -14,7 +14,7 @@ function CardContent({ study }: { study: CaseStudy }) {
     <>
       <div className="relative overflow-hidden aspect-[16/10] bg-surface">
         <img
-          src={`/images/${study.image}`}
+          src={`/images/${study.image}${study.imageCacheBust ? `?v=${study.imageCacheBust}` : ''}`}
           alt={study.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />

@@ -47,6 +47,8 @@ export type CaseStudy = {
   metrics?: string[]
   comingSoon?: boolean
   image: string      // filename in /images/, e.g. "nestaid.jpg"
+  /** Bump this when you replace the image with the same filename (CDN/browser cache). */
+  imageCacheBust?: string
   accentColor: string
   href: string
 }
@@ -61,6 +63,7 @@ export const caseStudies: CaseStudy[] = [
       'Conducted secondary research that pivoted NestAid from a B2C caregiving marketplace to a B2B AI operations platform — powered by Nessa, an AI agent that automates scheduling and workforce management for caregiving agencies.',
     tags: ['SaaS', 'AI Agents', 'UX Research'],
     image: 'nestaid.png',
+    imageCacheBust: '2',
     accentColor: '#C1694F',
     href: '/work/nestaid',
   },

@@ -251,7 +251,7 @@ export default function NestaidCaseStudy() {
             <div>
               <FadeUp>
                 <h2 className="font-display text-3xl md:text-4xl text-text leading-snug mb-6">
-                  The market already has caregiving companies. They just can't run efficiently.
+                  The market already has caregiving companies. The opportunity is in helping them operate better.
                 </h2>
               </FadeUp>
 
@@ -271,14 +271,14 @@ export default function NestaidCaseStudy() {
                   <div className="bg-primary/5 rounded-2xl p-6 border border-primary/20">
                     <p className="font-sans text-xs text-primary uppercase tracking-wider mb-3">New Model (B2B SaaS)</p>
                     <p className="font-display text-xl text-text mb-2">NestAid → Caregiving Agencies</p>
-                    <p className="font-sans text-sm text-text-secondary">An AI-powered operations platform that existing agencies use to manage their workforce.</p>
+                    <p className="font-sans text-sm text-text-secondary">An AI-powered operations platform that gives existing agencies the infrastructure to scale with confidence.</p>
                   </div>
                 </div>
               </FadeUp>
 
               <FadeUp delay={0.15}>
                 <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
-                  Instead of competing with established caregiving companies, NestAid would serve them. The pain wasn't the lack of caregivers — it was the inability to manage them well. The real opportunity was in the backend: scheduling, task management, coordination, and communication.
+                  Instead of competing with established caregiving companies, NestAid would serve them. The gap wasn't in the number of caregivers — it was in the tools and infrastructure to coordinate them at scale. The real opportunity was in the backend: scheduling, task management, coordination, and communication.
                 </p>
                 <p className="font-sans text-base text-text-secondary leading-relaxed">
                   This pivot fundamentally changed the product. We weren't building a marketplace anymore — we were building an intelligent operations layer for an entire industry.
