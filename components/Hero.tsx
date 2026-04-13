@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { ArrowDown, Sparkles } from 'lucide-react'
 import { siteConfig } from '@/lib/data'
 import HeroAnimation from './HeroAnimation'
+import LottieHero from './LottieHero'
 
 export default function Hero() {
   const scrollToWork = () => {
@@ -13,7 +14,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center gradient-hero overflow-hidden"
+      className="relative min-h-screen flex items-center gradient-hero"
       aria-label="Hero section"
     >
 
@@ -41,7 +42,7 @@ export default function Hero() {
             </h1>
 
             {/* Subtitle */}
-            <p className="font-sans text-lg text-text-secondary leading-relaxed mb-10">
+            <p className="font-sans text-lg text-text-secondary leading-relaxed mb-10 w-[90%]">
               Product designer with 2+ YOE building 0→1 products in fast-paced startups, focused on empathy-driven design, visual thinking, and rapid execution across SaaS, web, and mobile experiences.
             </p>
 
@@ -72,8 +73,9 @@ export default function Hero() {
 
           {/* Right: animated illustration */}
           <div className="hidden lg:block relative h-[680px] overflow-visible">
-            <HeroAnimation />
-            <p className="absolute bottom-0 left-0 right-0 text-center font-sans text-xs text-text-muted">
+            {/* Temporarily swapped — revert to <HeroAnimation /> if needed */}
+            <LottieHero />
+            <p className="absolute bottom-20 left-0 right-0 text-center font-sans text-xs text-text-muted">
               This portfolio was crafted in 48 hours using Claude + Cursor
             </p>
           </div>

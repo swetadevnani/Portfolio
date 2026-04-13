@@ -77,7 +77,7 @@ export default function Testimonials() {
       </div>
 
       {/* Carousel track — no padding, offset baked into translate */}
-      <div className="overflow-hidden">
+      <div className="overflow-hidden" style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)', maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)' }}>
         <motion.div
           className="flex"
           style={{ gap: `${GAP_PX}px` }}
