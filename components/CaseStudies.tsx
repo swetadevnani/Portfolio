@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import CaseStudyCard from './CaseStudyCard'
 import { caseStudies } from '@/lib/data'
@@ -22,6 +23,15 @@ export default function CaseStudies() {
           {caseStudies.slice(0, 4).map((study, i) => (
             <CaseStudyCard key={study.id} study={study} index={i} />
           ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-2 font-sans text-sm font-medium text-primary underline underline-offset-4 decoration-primary/40 hover:decoration-primary hover:gap-3 transition-all duration-200"
+          >
+            See all work
+            <ArrowRight size={16} />
+          </Link>
         </div>
         <div className="md:hidden mt-10 text-center">
           <a

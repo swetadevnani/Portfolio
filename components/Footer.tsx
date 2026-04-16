@@ -97,7 +97,7 @@ export default function Footer() {
         {/* Bottom note */}
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="font-sans text-xs text-text-muted">
-            Built using Claude Code, Cursor, Vercel and lots of Coffee ❤️
+            Designed & built in 48 hrs using Claude + Cursor, because shipping fast is part of the job.
           </p>
         </div>
       </div>

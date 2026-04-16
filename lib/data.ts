@@ -21,11 +21,11 @@ export const siteConfig = {
 }
 
 export const aboutContent = {
-  headline: 'Designing with intention, building with empathy.',
+  headline: 'I move fast without cutting corners.',
   bio: [
-    "I'm a Product Designer focused on designing thoughtful digital experiences that solve real problems. I began my journey in UX design and naturally grew into product design as I became more involved in shaping not just interfaces, but the strategy, structure, and outcomes of the products themselves.",
-    "I enjoy working on AI/ML products, consumer applications, and early-stage (0→1) products, where design plays a key role in turning complex ideas into intuitive experiences. My approach combines rapid prototyping, continuous iteration, and data-informed decision making. I take end-to-end ownership of the design process, from understanding user needs to delivering implementation-ready solutions.",
-    "I work closely with product managers to shape product direction and partner with engineers to ensure designs translate smoothly into shipped products. Outside of work, I enjoy reading, cycling around the city, and attending networking events to meet and learn from people across the design and tech community.",
+    "I'm a product designer who specializes in SaaS, specifically the hard part: taking a vague problem, a demanding user, and a tight timeline, and turning all three into a shipped product. I come from a research background, which means I don't start with screens; I start with questions.",
+    "My workflow is AI-native by design, not because it's trendy, but because it closes the gap between insight and execution. I use Claude and Cursor to compress discovery timelines, Figma Make to prototype faster, and stay in lockstep with engineers so nothing gets lost in handoffs.",
+    "Outside work, I cycle, read obsessively, and occasionally build small tools with AI just to understand what I'm designing for.",
   ],
   highlights: [
     { label: 'Years of Experience', value: '4+' },

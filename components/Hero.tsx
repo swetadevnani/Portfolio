@@ -26,7 +26,7 @@ export default function Hero() {
             {/* Available badge */}
             <div className="inline-flex items-center gap-2 bg-surface border border-border rounded-full px-4 py-1.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="font-sans text-sm text-text-secondary">Available for new projects</span>
+              <span className="font-sans text-sm text-text-secondary">Open to full-time Product Design roles</span>
             </div>
 
             {/* Greeting */}
@@ -38,12 +38,12 @@ export default function Hero() {
 
             {/* Main heading */}
             <h1 className="font-display text-[44px] md:text-[56px] lg:text-[56px] text-text leading-[1.22] mb-6">
-              I design, build, and ship products.
+              The designer your AI-era SaaS product needs.
             </h1>
 
             {/* Subtitle */}
             <p className="font-sans text-lg text-text-secondary leading-relaxed mb-10 w-[90%]">
-              Product designer with 2+ YOE building 0→1 products in fast-paced startups, focused on empathy-driven design, visual thinking, and rapid execution across SaaS, web, and mobile experiences.
+              Product designer specializing in SaaS, from early research through shipped UI. I use AI tools natively across the full design process: faster discovery, tighter iteration, better outcomes.
             </p>
 
             {/* CTA */}
@@ -72,12 +72,8 @@ export default function Hero() {
           </div>
 
           {/* Right: animated illustration */}
-          <div className="hidden lg:block relative h-[680px] overflow-visible">
-            {/* Temporarily swapped — revert to <HeroAnimation /> if needed */}
-            <LottieHero />
-            <p className="absolute bottom-20 left-0 right-0 text-center font-sans text-xs text-text-muted">
-              This portfolio was crafted in 48 hours using Claude + Cursor
-            </p>
+          <div className="hidden lg:block relative h-[680px] overflow-hidden">
+            <HeroAnimation />
           </div>
 
         </div>

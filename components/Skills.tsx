@@ -83,7 +83,7 @@ export default function Skills() {
           ))}
         </div>
         <p className="text-center font-sans text-sm text-text-muted mt-10">
-          Always learning. Currently exploring AI-augmented design workflows and accessibility-first systems.
+          Currently deepening: accessibility-first design systems and AI agent UX patterns.
         </p>
       </div>
     </section>

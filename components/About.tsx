@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { aboutContent, siteConfig } from '@/lib/data'
 
 export default function About() {
@@ -18,6 +19,13 @@ export default function About() {
                 {paragraph}
               </p>
             ))}
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 mt-4 font-sans text-sm font-medium text-primary underline underline-offset-4 hover:gap-3 transition-all duration-200"
+            >
+              The full story, if you're curious
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
           <div className="relative">
             <div className="relative">
@@ -31,10 +39,6 @@ export default function About() {
                   alt={`${siteConfig.name} — UX & Product Designer`}
                   className="w-full h-full object-cover object-top"
                 />
-              </div>
-              <div className="absolute -bottom-5 -left-5 bg-primary text-background rounded-2xl px-5 py-3 shadow-card">
-                <div className="font-sans text-xs font-medium opacity-80 mb-0.5">Based in PA</div>
-                <div className="font-sans text-sm font-semibold">Open to relocation</div>
               </div>
             </div>
           </div>
