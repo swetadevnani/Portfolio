@@ -1,12 +1,13 @@
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
-import { Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 import { siteConfig, navLinks } from '@/lib/data'
 
 const socialIcons = [
   { label: 'LinkedIn', href: siteConfig.social.linkedin, icon: Linkedin },
   { label: 'Email', href: siteConfig.social.email, icon: Mail },
+  { label: 'GitHub', href: siteConfig.social.github, icon: Github },
 ]
 
 export default function Footer() {

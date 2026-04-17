@@ -17,6 +17,7 @@ export const siteConfig = {
   social: {
     linkedin: 'https://www.linkedin.com/in/sweta-devnani/',
     email: 'mailto:swetaux@gmail.com',
+    github: 'https://github.com/swetadevnani',
   },
 }
 
