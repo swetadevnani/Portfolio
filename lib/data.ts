@@ -190,6 +190,7 @@ export const researchProjects: ResearchProject[] = [
 export const navLinks = [
   { label: 'Work', href: '/work' },
   { label: 'About', href: '/about' },
+  { label: 'Playground', href: '/playground' },
   { label: 'Contact', href: '#contact' },
   { label: 'Resume', href: 'https://drive.google.com/file/d/1O_6MPlcc__YNSNWAqNo28qwqGbDPAVjX/view?usp=sharing', external: true },
 ]
