@@ -8,7 +8,8 @@ export function CanvasCursor() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext('2d')!
+    const el: HTMLCanvasElement = canvas
+    const ctx = el.getContext('2d')!
 
     let running = true
     const mouse = { x: -200, y: -200 }
@@ -20,8 +21,9 @@ export function CanvasCursor() {
     }))
 
     function resize() {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      if (!canvas) return
+      el.width = window.innerWidth
+      el.height = window.innerHeight
     }
 
     function onMove(e: MouseEvent) {
@@ -31,7 +33,7 @@ export function CanvasCursor() {
 
     function render() {
       if (!running) return
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.clearRect(0, 0, el.width, el.height)
 
       // Each dot chases the one in front with easing
       dots[0].x += (mouse.x - dots[0].x) * 0.35
