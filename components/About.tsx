@@ -12,10 +12,7 @@ export default function About() {
           <div>
             <h2 className="section-title mb-8">{aboutContent.headline}</h2>
             {aboutContent.bio.map((paragraph, i) => (
-              <p
-                key={i}
-                className="font-sans text-base text-text-secondary leading-relaxed mb-5"
-              >
+              <p key={i} className="font-sans text-base text-text-secondary leading-relaxed mb-5">
                 {paragraph}
               </p>
             ))}
@@ -23,7 +20,7 @@ export default function About() {
               href="/about"
               className="inline-flex items-center gap-2 mt-4 font-sans text-sm font-medium text-primary underline underline-offset-4 hover:gap-3 transition-all duration-200"
             >
-              The full story, if you're curious
+              The full story, if you&apos;re curious
               <span aria-hidden="true">→</span>
             </Link>
           </div>

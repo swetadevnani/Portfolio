@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { ArrowDown, Sparkles } from 'lucide-react'
 import { siteConfig } from '@/lib/data'
 import HeroAnimation from './HeroAnimation'
-import LottieHero from './LottieHero'
 
 export default function Hero() {
   const scrollToWork = () => {
@@ -17,7 +16,6 @@ export default function Hero() {
       className="relative min-h-screen flex items-center gradient-hero"
       aria-label="Hero section"
     >
-
       <div className="container-inner section-padding w-full relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 

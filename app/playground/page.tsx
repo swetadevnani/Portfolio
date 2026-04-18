@@ -7,6 +7,7 @@ import Header from '@/components/Header'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import { DottedSurface } from '@/components/DottedSurface'
+import { CanvasCursor } from '@/components/CanvasCursor'
 
 function FadeIn({
   children,
@@ -65,6 +66,7 @@ const spacesProjects = [
 export default function PlaygroundPage() {
   return (
     <main className="min-h-screen bg-background">
+      <CanvasCursor />
       <Header />
 
       {/* ── 1. HERO ──────────────────────────────────────── */}
@@ -73,54 +75,25 @@ export default function PlaygroundPage() {
 
         {/* Scattered floating tags — decorative */}
         <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-          <motion.div
-            initial={{ opacity: 0, y: 10, rotate: -6 }}
-            animate={{ opacity: 1, y: 0, rotate: -6 }}
-            transition={{ delay: 0.4, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            className="absolute top-[22%] left-[6%] font-sans text-xs font-medium text-text-secondary bg-background/80 backdrop-blur-sm border border-border px-3 py-1.5 rounded-full shadow-card"
-          >
-            Architecture
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 10, rotate: 4 }}
-            animate={{ opacity: 1, y: 0, rotate: 4 }}
-            transition={{ delay: 0.55, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            className="absolute top-[18%] right-[8%] font-sans text-xs font-medium text-primary bg-primary/10 border border-primary/20 px-3 py-1.5 rounded-full shadow-card"
-          >
-            AI Experiments
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 10, rotate: 3 }}
-            animate={{ opacity: 1, y: 0, rotate: 3 }}
-            transition={{ delay: 0.65, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            className="absolute bottom-[28%] left-[4%] font-sans text-xs font-medium text-text-secondary bg-background/80 backdrop-blur-sm border border-border px-3 py-1.5 rounded-full shadow-card hidden md:block"
-          >
-            Interior Design
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 10, rotate: -3 }}
-            animate={{ opacity: 1, y: 0, rotate: -3 }}
-            transition={{ delay: 0.75, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            className="absolute bottom-[32%] right-[5%] font-sans text-xs font-medium text-text-secondary bg-background/80 backdrop-blur-sm border border-border px-3 py-1.5 rounded-full shadow-card hidden md:block"
-          >
-            Side Projects
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 10, rotate: -5 }}
-            animate={{ opacity: 1, y: 0, rotate: -5 }}
-            transition={{ delay: 0.85, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            className="absolute top-[42%] left-[2%] font-sans text-xs font-medium text-text-secondary bg-background/80 backdrop-blur-sm border border-border px-3 py-1.5 rounded-full shadow-card hidden lg:block"
-          >
-            Hospitality
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 10, rotate: 6 }}
-            animate={{ opacity: 1, y: 0, rotate: 6 }}
-            transition={{ delay: 0.9, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            className="absolute top-[40%] right-[2%] font-sans text-xs font-medium text-primary bg-primary/10 border border-primary/20 px-3 py-1.5 rounded-full shadow-card hidden lg:block"
-          >
-            Built with AI
-          </motion.div>
+          {[
+            { label: 'Architecture',    top: '22%', left: '12%',  rotate: -6, delay: 0.40 },
+            { label: 'AI Experiments',  top: '18%', right: '12%', rotate:  4, delay: 0.55 },
+            { label: 'Interior Design', bottom: '28%', left: '10%', rotate:  3, delay: 0.65, mdOnly: true },
+            { label: 'Side Projects',   bottom: '32%', right: '10%', rotate: -3, delay: 0.75, mdOnly: true },
+            { label: 'Hospitality',     top: '44%', left: '7%',   rotate: -5, delay: 0.85, lgOnly: true },
+            { label: 'Built with AI',   top: '42%', right: '7%',  rotate:  6, delay: 0.90, lgOnly: true },
+          ].map(({ label, delay, rotate, mdOnly, lgOnly, ...pos }) => (
+            <motion.div
+              key={label}
+              initial={{ opacity: 0, y: 10, rotate }}
+              animate={{ opacity: 1, y: 0, rotate }}
+              transition={{ delay, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+              style={pos as React.CSSProperties}
+              className={`absolute font-sans text-xs font-medium text-text-secondary bg-background/80 backdrop-blur-sm border border-border px-3 py-1.5 rounded-full shadow-card ${mdOnly ? 'hidden md:block' : ''} ${lgOnly ? 'hidden lg:block' : ''}`}
+            >
+              {label}
+            </motion.div>
+          ))}
         </div>
 
         {/* Centered content */}
@@ -129,19 +102,11 @@ export default function PlaygroundPage() {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="font-display text-6xl md:text-7xl lg:text-[88px] text-text leading-[0.92] mb-7 max-w-3xl"
+            className="font-display text-6xl md:text-7xl lg:text-[88px] text-text leading-[0.92] max-w-3xl"
           >
-            Not everything<br />
-            fits a <em className="text-primary">case study.</em>
+            Where the<br />
+            <em className="text-primary">magic</em> happens.
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            className="font-sans text-base text-text-secondary leading-relaxed max-w-sm"
-          >
-            Spaces from before pixels. Experiments built just because.
-          </motion.p>
         </div>
       </section>
 
