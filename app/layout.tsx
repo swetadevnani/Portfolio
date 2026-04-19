@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { DM_Serif_Display, DM_Sans } from 'next/font/google'
+import { CanvasCursor } from '@/components/CanvasCursor'
 import './globals.css'
 
 
@@ -82,6 +83,7 @@ export default function RootLayout({
       className={`${dmSerifDisplay.variable} ${dmSans.variable}`}
     >
       <body className="bg-background text-text font-sans antialiased">
+        <CanvasCursor />
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FE82FK64YV"

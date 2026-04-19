@@ -98,7 +98,7 @@ export default function Footer() {
         {/* Bottom note */}
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="font-sans text-xs text-text-muted">
-            Designed & built in 48 hrs using Claude + Cursor, because shipping fast is part of the job.
+            Designed with intent. Vibe coded with Claude + Cursor.
           </p>
         </div>
       </div>

@@ -94,7 +94,7 @@ export default function AboutPage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-surface border border-border rounded-full px-4 py-1.5 mb-8">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="font-sans text-sm text-text-secondary">Open to full-time Product Design roles</span>
+                <span className="font-sans text-sm text-text-secondary">Open to opportunities</span>
               </div>
 
               <h1 className="font-display text-5xl md:text-6xl text-text leading-tight mb-6">

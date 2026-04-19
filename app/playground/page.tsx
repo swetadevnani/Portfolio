@@ -1,13 +1,12 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Header from '@/components/Header'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
-import { DottedSurface } from '@/components/DottedSurface'
-import { CanvasCursor } from '@/components/CanvasCursor'
+const MAGIC_WORDS = ['magic', 'chaos', 'ideas', 'fun', 'work', 'magic']
 
 function FadeIn({
   children,
@@ -64,14 +63,39 @@ const spacesProjects = [
 ]
 
 export default function PlaygroundPage() {
+  // Word swap
+  const [wordIdx, setWordIdx] = useState(0)
+  useEffect(() => {
+    const t = setInterval(() => setWordIdx(i => (i + 1) % MAGIC_WORDS.length), 2000)
+    return () => clearInterval(t)
+  }, [])
+
+  // Blob cursor
+  const [blob, setBlob] = useState({ x: -300, y: -300 })
+  const heroRef = useRef<HTMLElement>(null)
+  useEffect(() => {
+    const el = heroRef.current
+    if (!el) return
+    const onMove = (e: MouseEvent) => {
+      const rect = el.getBoundingClientRect()
+      setBlob({ x: e.clientX - rect.left, y: e.clientY - rect.top })
+    }
+    el.addEventListener('mousemove', onMove)
+    return () => el.removeEventListener('mousemove', onMove)
+  }, [])
+
   return (
     <main className="min-h-screen bg-background">
-      <CanvasCursor />
       <Header />
 
       {/* ── 1. HERO ──────────────────────────────────────── */}
-      <section className="relative pt-32 pb-28 border-b border-border overflow-hidden">
-        <DottedSurface className="z-0" />
+      <section ref={heroRef} className="relative pt-32 pb-28 border-b border-border overflow-hidden">
+
+        {/* Blob that follows cursor */}
+        <div
+          className="pointer-events-none absolute z-0 w-[420px] h-[420px] rounded-full bg-primary/15 blur-[100px] transition-transform duration-75"
+          style={{ left: blob.x - 210, top: blob.y - 210 }}
+        />
 
         {/* Scattered floating tags — decorative */}
         <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
@@ -105,7 +129,16 @@ export default function PlaygroundPage() {
             className="font-display text-6xl md:text-7xl lg:text-[88px] text-text leading-[0.92] max-w-3xl"
           >
             Where the<br />
-            <em className="text-primary">magic</em> happens.
+            <motion.em
+              key={wordIdx}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-primary inline-block"
+            >
+              {MAGIC_WORDS[wordIdx]}
+            </motion.em>{' '}happens.
           </motion.h1>
         </div>
       </section>

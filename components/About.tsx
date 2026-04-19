@@ -9,6 +9,7 @@ export default function About() {
       <div className="container-inner">
         <p className="section-label">About Me</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left: text */}
           <div>
             <h2 className="section-title mb-8">{aboutContent.headline}</h2>
             {aboutContent.bio.map((paragraph, i) => (
@@ -24,20 +25,13 @@ export default function About() {
               <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <div className="relative">
-            <div className="relative">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 rounded-3xl border-2 border-primary/20 translate-x-4 translate-y-4"
-              />
-              <div className="relative bg-background rounded-3xl overflow-hidden aspect-[4/5] shadow-card">
-                <img
-                  src="/images/sweta.JPG"
-                  alt={`${siteConfig.name} — UX & Product Designer`}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            </div>
+          {/* Right: presenting photo */}
+          <div className="rounded-2xl overflow-hidden shadow-card">
+            <img
+              src="/images/sweta-presenting.jpg"
+              alt="Sweta presenting at a design event"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
         </div>
       </div>
