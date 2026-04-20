@@ -33,9 +33,21 @@ function FadeIn({
 
 // ── Replace image paths and text with your actual project content ──
 const images = [
-  { src: '/images/about-space-1.jpg', alt: 'Amusement park overview', caption: 'Project overview — site layout and entry experience' },
-  { src: '/images/about-space-1.jpg', alt: 'Zone planning', caption: 'Zone planning and circulation study' },
-  { src: '/images/about-space-1.jpg', alt: 'Interior detail', caption: 'Interior detailing — rides zone' },
+  {
+    src: '/images/amusement-park-overview.jpg',
+    alt: 'Amusement park overview',
+    caption: 'Project overview — site layout and entry experience',
+  },
+  {
+    src: '/images/amusement-park-zone-planning.jpg',
+    alt: 'Zone planning',
+    caption: 'Zone planning and circulation study',
+  },
+  {
+    src: '/images/amusement-park-interior-detail.jpg',
+    alt: 'Interior detail',
+    caption: 'Interior detailing — rides zone',
+  },
 ]
 
 export default function AmusementParkPage() {
@@ -86,7 +98,7 @@ export default function AmusementParkPage() {
           <FadeIn delay={0.15}>
             <div className="relative rounded-3xl overflow-hidden aspect-[16/7] bg-surface shadow-card mb-16">
               <img
-                src="/images/about-space-1.jpg"
+                src="/images/amusement-park-hero.jpg"
                 alt="Amusement Park Ahmedabad"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -131,19 +143,10 @@ export default function AmusementParkPage() {
                     alt={img.alt}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-5">
-                    <p className="font-sans text-xs text-white/80">{img.caption}</p>
-                  </div>
                 </div>
               </FadeIn>
             ))}
           </div>
-
-          <FadeIn delay={0.3} className="mt-8 pt-8 border-t border-border">
-            <p className="font-sans text-sm text-text-muted italic">
-              Note: Replace placeholder images above with actual project photography.
-            </p>
-          </FadeIn>
         </div>
       </section>
 

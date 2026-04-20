@@ -32,9 +32,11 @@ function FadeIn({
 }
 
 const images = [
-  { src: '/images/about-space-2.jpg', alt: 'Living space overview', caption: 'Main living area — material palette and spatial flow' },
-  { src: '/images/about-space-2.jpg', alt: 'Room detail', caption: 'Bedroom — light and proportion study' },
-  { src: '/images/about-space-2.jpg', alt: 'Transition space', caption: 'Transitional spaces — how rooms connect' },
+  { src: '/images/residential-gallery-1.jpg', alt: 'Main living area', caption: 'Main living area — material palette and spatial flow' },
+  { src: '/images/residential-gallery-2.jpg', alt: 'Bedroom', caption: 'Bedroom — light and proportion study' },
+  { src: '/images/residential-gallery-3.jpg', alt: 'Transitional spaces', caption: 'Transitional spaces — how rooms connect' },
+  { src: '/images/residential-gallery-4.jpg', alt: 'Kitchen and dining', caption: 'Kitchen and dining — warmth and clarity' },
+  { src: '/images/residential-gallery-5.jpg', alt: 'Details', caption: 'Detailing — joinery and lighting moments' },
 ]
 
 export default function ResidentialPage() {
@@ -82,7 +84,7 @@ export default function ResidentialPage() {
           <FadeIn delay={0.15}>
             <div className="relative rounded-3xl overflow-hidden aspect-[16/7] bg-surface shadow-card mb-16">
               <img
-                src="/images/about-space-2.jpg"
+                src="/images/residential-hero-1.jpg"
                 alt="Residential Project Ahmedabad"
                 className="absolute inset-0 w-full h-full object-cover"
               />

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Header from '@/components/Header'
@@ -75,11 +75,64 @@ const timeline = [
 ]
 
 const interests = [
-  { label: 'Reading', desc: 'Psychology, design pattern systems — and the irrational behavior I can\'t put down.' },
-  { label: 'Cycling', desc: 'My favorite way to explore a city and clear my head at the same time.' },
-  { label: 'Dogs', desc: 'Pure, unconditional joy. No experience needed.' },
-  { label: 'Good Food', desc: 'New restaurants. New travel. Memories worth every bite.' },
+  { label: 'Reading', emoji: '📚', desc: 'Psychology, design pattern systems — and the irrational behaviour I can\'t put down.', image: '/images/hobby-reading.jpg' },
+  { label: 'Cycling', emoji: '🚴', desc: 'My favourite way to explore a city and clear my head at the same time.', image: '/images/hobby-cycling.jpg' },
+  { label: 'Dogs', emoji: '🐶', desc: 'Pure, unconditional joy. No experience needed.', image: '/images/hobby-dogs.jpg' },
+  { label: 'Good Food', emoji: '🍜', desc: 'New restaurants. New travel. Memories worth every bite.', image: '/images/hobby-food.jpg' },
 ]
+
+function FlipCards() {
+  const [flipped, setFlipped] = useState<number | null>(null)
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+      {interests.map((item, i) => (
+        <div
+          key={item.label}
+          className="relative h-64 cursor-pointer"
+          style={{ perspective: '1000px' }}
+          onClick={() => setFlipped(flipped === i ? null : i)}
+        >
+          <div
+            className="relative w-full h-full transition-transform duration-700"
+            style={{
+              transformStyle: 'preserve-3d',
+              transform: flipped === i ? 'rotateY(180deg)' : 'rotateY(0deg)',
+            }}
+          >
+            {/* Front */}
+            <div
+              className="absolute inset-0 rounded-2xl overflow-hidden shadow-card"
+              style={{ backfaceVisibility: 'hidden' }}
+            >
+              <img
+                src={item.image}
+                alt={item.label}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <span className="text-2xl">{item.emoji}</span>
+                <h4 className="font-display text-lg text-white mt-1">{item.label}</h4>
+              </div>
+              <div className="absolute top-3 right-3 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1">
+                <p className="font-sans text-[10px] text-white">tap to flip</p>
+              </div>
+            </div>
+            {/* Back */}
+            <div
+              className="absolute inset-0 rounded-2xl bg-primary flex flex-col items-center justify-center p-6 text-center shadow-card"
+              style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+            >
+              <span className="text-3xl mb-4">{item.emoji}</span>
+              <h4 className="font-display text-xl text-white mb-3">{item.label}</h4>
+              <p className="font-sans text-xs text-white/85 leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 export default function AboutPage() {
   return (
@@ -150,98 +203,35 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 2. THE DESIGNER ──────────────────────────────── */}
-      <section className="py-24 bg-surface border-b border-border">
-        <div className="container-inner section-padding">
-          <FadeIn>
-            <p className="section-label mb-6">The Designer</p>
-            <h2 className="section-title mb-10 max-w-xl">
-              I think in systems.<br />I ship in sprints.
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={0.1}>
-            <p className="font-sans text-base text-text-secondary leading-relaxed mb-8 max-w-3xl">
-              I don&apos;t start with screens. I start with questions — who is this for, what are they actually trying to do, and where is the current experience failing them? That research-first instinct shapes every decision I make before I open Figma.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.15}>
-            <blockquote className="border-l-2 border-primary pl-6 mb-8 max-w-2xl">
-              <p className="font-display text-xl text-text leading-relaxed italic">
-                &ldquo;I don&apos;t just make things look good — I make them work, feel right, and mean something to the people using them.&rdquo;
-              </p>
-            </blockquote>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <p className="font-sans text-base text-text-secondary leading-relaxed mb-6 max-w-3xl">
-              My workflow is AI-native by design. I use Claude and Cursor to compress discovery timelines and ship production-ready interfaces faster — at NestAid, I shipped a fully functional web platform in one week without engineering support, eliminating the design-to-handoff cycle entirely. That&apos;s not a shortcut. That&apos;s a new way of owning the full stack of design.
-            </p>
-            <p className="font-sans text-base text-text-secondary leading-relaxed mb-14 max-w-3xl">
-              I take end-to-end ownership — from messy early research through polished handoff — and I stay close to engineering so what gets shipped actually reflects the intent. I&apos;ve worked across 0→1 products, multi-user SaaS platforms, and data-driven redesigns with measurable outcomes.
-            </p>
-          </FadeIn>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 border-t border-border">
-            {stats.map((s, i) => (
-              <FadeIn key={s.value} delay={i * 0.1}>
-                <p className="font-display text-4xl text-text mb-2">{s.value}</p>
-                <p className="font-sans text-sm text-text-muted leading-snug">{s.desc} — <span className="text-primary">{s.project}</span></p>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── 3. WHERE IT STARTED ──────────────────────────── */}
       <section className="py-24 border-b border-border">
         <div className="container-inner section-padding">
-          <FadeIn>
-            <p className="section-label mb-6">Where It Started</p>
-            <h2 className="section-title mb-6 max-w-3xl">
-              Before pixels, I designed spaces people walked through every day.
-            </h2>
-            <p className="font-sans text-base text-text-secondary leading-relaxed mb-4 max-w-2xl">
-              My design journey didn&apos;t begin on a screen — it began with floor plans, material palettes, and spatial flow. I earned a Bachelor of Architecture from Gujarat Technological University, and spent years working across residential, commercial, and hospitality projects.
-            </p>
-            <p className="font-sans text-base text-text-secondary leading-relaxed mb-12 max-w-2xl">
-              The most formative of them: one of Ahmedabad&apos;s largest amusement parks — a space visited by thousands of people every single day. Designing for that kind of scale taught me something that never left: great design is invisible. People only notice it when it breaks.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.15} className="grid grid-cols-2 gap-5 mb-8">
-            {/* Left: large image */}
-            <div className="rounded-2xl overflow-hidden bg-surface shadow-card row-span-2 relative aspect-[3/4] flex items-end p-5">
-              <img src="/images/about-space-1.jpg" alt="Amusement Park, Ahmedabad" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="relative z-10 bg-background/80 backdrop-blur-sm rounded-xl px-4 py-2">
-                <p className="font-sans text-xs font-semibold text-text">Project lead at Ahmedabads biggest Amusement park project</p>
-              </div>
+          <FadeIn className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <p className="section-label mb-6">Where It Started</p>
+              <h2 className="section-title mb-6">
+                Before pixels, I designed spaces.
+              </h2>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+                I started my career as an architect and interior designer — spending years working across residential, commercial, and hospitality projects in India.
+              </p>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-8">
+                The spatial thinking I built over those years — how people move through environments, where friction accumulates, what makes a flow feel effortless — maps directly onto how I think about user journeys and product design today. Different medium. Same problem.
+              </p>
+              <a
+                href="/playground"
+                className="font-sans text-sm text-primary underline underline-offset-4 hover:text-primary/70 transition-colors inline-block"
+              >
+                See my architecture & interior work →
+              </a>
             </div>
-            {/* Right top */}
-            <div className="rounded-2xl overflow-hidden bg-surface shadow-card relative aspect-[4/3] flex items-end p-4">
-              <img src="/images/about-space-2.jpg" alt="Commercial project" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="relative z-10 bg-background/80 backdrop-blur-sm rounded-xl px-4 py-2">
-                <p className="font-sans text-xs font-semibold text-text">Residential Project Image (Ahmedabad)</p>
-              </div>
+            <div className="rounded-2xl overflow-hidden shadow-card aspect-[4/5]">
+              <img
+                src="/images/sweta-architecture.jpg"
+                alt="Sweta on an architecture project site"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
-            {/* Right bottom */}
-            <div className="rounded-2xl overflow-hidden bg-surface shadow-card relative aspect-[4/3] flex items-end p-4">
-              <img src="/images/about-space-3.jpg" alt="Hospitality / Residential space" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="relative z-10 bg-background/80 backdrop-blur-sm rounded-xl px-4 py-2">
-                <p className="font-sans text-xs font-semibold text-text">Hospitality Project Image (Bogota Cafe, Ahmedabad)</p>
-              </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <a href="#" className="font-sans text-sm text-primary underline underline-offset-4 hover:text-primary/70 transition-colors mb-12 inline-block">
-              See all architecture & interior work →
-            </a>
-            <p className="font-sans text-base text-text-secondary leading-relaxed max-w-2xl mt-8">
-              The spatial thinking I built over those years — how people move through environments, where friction accumulates, what makes a flow feel effortless — maps directly onto how I think about user journeys and product architecture today. Different medium. Same problem.
-            </p>
           </FadeIn>
         </div>
       </section>
@@ -321,20 +311,12 @@ export default function AboutPage() {
         <div className="container-inner section-padding">
           <FadeIn>
             <p className="section-label mb-4">Active Areas</p>
-            <p className="section-subtitle mb-10">
-              Lately, I&apos;m usually cycling around Philadelphia, alone or in a pack, or building:
+            <p className="section-subtitle mb-2">
+              Outside of work, this is where you&apos;ll find me.
             </p>
+            <p className="font-sans text-xs text-text-muted mb-10">Flip the cards ↓</p>
           </FadeIn>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {interests.map((item, i) => (
-              <FadeIn key={item.label} delay={i * 0.08}>
-                <div className="bg-background border border-border rounded-2xl p-6 shadow-card">
-                  <h4 className="font-display text-lg text-text mb-3">{item.label}</h4>
-                  <p className="font-sans text-xs text-text-secondary leading-relaxed">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          <FlipCards />
         </div>
       </section>
 

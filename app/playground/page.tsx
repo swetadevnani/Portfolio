@@ -35,27 +35,21 @@ function FadeIn({
 const spacesProjects = [
   {
     title: 'Amusement Park',
-    location: 'Ahmedabad, India',
     category: 'Public · Recreation',
-    year: '2018',
     image: '/images/about-space-1.jpg',
     href: '/playground/spaces/amusement-park',
     accent: '#C0305E',
   },
   {
     title: 'Residential Interior',
-    location: 'Ahmedabad, India',
     category: 'Residential',
-    year: '2017',
     image: '/images/about-space-2.jpg',
     href: '/playground/spaces/residential',
     accent: '#8B4513',
   },
   {
-    title: 'Bogota Café',
-    location: 'Ahmedabad, India',
-    category: 'Hospitality',
-    year: '2019',
+    title: 'Farm House Architecture',
+    category: 'Recreational',
     image: '/images/about-space-3.jpg',
     href: '/playground/spaces/bogota-cafe',
     accent: '#2D6A4F',
@@ -191,9 +185,7 @@ export default function PlaygroundPage() {
 
                 {/* Bottom text */}
                 <div className="absolute bottom-0 left-0 right-0 p-7">
-                  <p className="font-sans text-xs text-white/50 mb-1">{spacesProjects[0].year}</p>
                   <h3 className="font-display text-3xl text-white leading-tight">{spacesProjects[0].title}</h3>
-                  <p className="font-sans text-sm text-white/60 mt-1">{spacesProjects[0].location}</p>
                 </div>
               </a>
             </FadeIn>
@@ -224,9 +216,7 @@ export default function PlaygroundPage() {
                     </div>
 
                     <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <p className="font-sans text-xs text-white/50 mb-0.5">{project.year}</p>
                       <h3 className="font-display text-xl text-white leading-tight">{project.title}</h3>
-                      <p className="font-sans text-xs text-white/60 mt-0.5">{project.location}</p>
                     </div>
                   </a>
                 </FadeIn>
