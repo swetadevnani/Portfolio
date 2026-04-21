@@ -162,7 +162,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div aria-hidden="true" className="absolute inset-0 rounded-3xl border-2 border-primary/20 translate-x-4 translate-y-4" />
                 <div className="relative bg-surface rounded-3xl overflow-hidden aspect-[4/5] shadow-card">
-                  <img src="/images/sweta-presenting.jpg" alt={siteConfig.fullName} className="w-full h-full object-cover object-top" />
+                  <img src="/images/sweta.JPG" alt={siteConfig.fullName} className="w-full h-full object-cover object-top" />
                 </div>
               </div>
             </FadeIn>
