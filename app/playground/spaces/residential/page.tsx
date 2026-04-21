@@ -123,9 +123,6 @@ export default function ResidentialPage() {
               <FadeIn key={i} delay={i * 0.1} className={i === 0 ? 'md:col-span-2' : ''}>
                 <div className={`relative rounded-2xl overflow-hidden bg-surface-dark shadow-card ${i === 0 ? 'aspect-[16/7]' : 'aspect-[4/3]'}`}>
                   <img src={img.src} alt={img.alt} className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-5">
-                    <p className="font-sans text-xs text-white/80">{img.caption}</p>
-                  </div>
                 </div>
               </FadeIn>
             ))}

@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Download } from 'lucide-react'
+import { Mail, Download, CalendarDays } from 'lucide-react'
 import { siteConfig } from '@/lib/data'
 
 export default function Contact() {
@@ -37,22 +37,34 @@ export default function Contact() {
                 to swap ideas over coffee — I&apos;d love to hear from you. I&apos;m always open to
                 the right collaboration.
               </p>
+              {/* Primary CTA — Calendly */}
               <a
-                href={`mailto:${siteConfig.email}`}
-                className="group mx-auto mb-6 inline-flex max-w-full flex-row items-center justify-center gap-2 rounded-full bg-primary px-3 py-3 font-sans text-xs font-medium leading-none text-background transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-card-hover sm:gap-3 sm:px-8 sm:py-4 sm:text-lg"
+                href="https://calendly.com/devnanishwetaa/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mx-auto mb-8 inline-flex max-w-full flex-row items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 font-sans text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-card-hover"
               >
-                <Mail className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" aria-hidden />
-                <span className="whitespace-nowrap">{siteConfig.email}</span>
+                <CalendarDays className="h-5 w-5 shrink-0" aria-hidden />
+                Book a 30-min call
               </a>
-              <div className="mb-12">
+
+              {/* Secondary links */}
+              <div className="flex items-center justify-center gap-6 mb-12">
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="inline-flex items-center gap-1.5 font-sans text-sm text-text-secondary hover:text-primary transition-colors"
+                >
+                  <Mail size={14} />
+                  {siteConfig.email}
+                </a>
+                <span className="text-border">·</span>
                 <a
                   href={siteConfig.resumeUrl}
                   download="Sweta_Devnani_Resume.pdf"
-                  className="inline-flex items-center gap-2 font-sans text-sm font-medium text-text-secondary hover:text-primary transition-colors"
-                  aria-label="Download resume PDF"
+                  className="inline-flex items-center gap-1.5 font-sans text-sm text-text-secondary hover:text-primary transition-colors"
                 >
-                  <Download size={15} />
-                  Download Resume
+                  <Download size={14} />
+                  Resume
                 </a>
               </div>
             </div>

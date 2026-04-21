@@ -158,34 +158,23 @@ export default function PlaygroundPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
 
             {/* Big card — takes 7 cols, full height */}
-            <FadeIn delay={0} className="md:col-span-7">
-              <a
-                href={spacesProjects[0].href}
-                className="group relative block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full min-h-[420px]"
-              >
-                <img
-                  src={spacesProjects[0].image}
-                  alt={spacesProjects[0].title}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-
-                {/* Top badge */}
-                <div className="absolute top-5 left-5">
-                  <span className="font-sans text-xs font-medium text-white/80 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full">
-                    {spacesProjects[0].category}
-                  </span>
+            <FadeIn delay={0} className="md:col-span-7 flex flex-col">
+              <a href={spacesProjects[0].href} className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500">
+                <div className="relative overflow-hidden min-h-[340px]">
+                  <img
+                    src={spacesProjects[0].image}
+                    alt={spacesProjects[0].title}
+                    className="w-full h-full absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
                 </div>
-
-                {/* Arrow */}
-                <div className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                  <ArrowUpRight size={15} className="text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-                </div>
-
-                {/* Bottom text */}
-                <div className="absolute bottom-0 left-0 right-0 p-7">
-                  <h3 className="font-display text-3xl text-white leading-tight">{spacesProjects[0].title}</h3>
+                <div className="flex items-center justify-between px-5 py-4">
+                  <div>
+                    <p className="font-sans text-xs text-text-muted mb-0.5">{spacesProjects[0].category}</p>
+                    <h3 className="font-display text-xl text-text">{spacesProjects[0].title}</h3>
+                  </div>
+                  <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <ArrowUpRight size={14} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
+                  </div>
                 </div>
               </a>
             </FadeIn>
@@ -194,29 +183,22 @@ export default function PlaygroundPage() {
             <div className="md:col-span-5 flex flex-col gap-4 md:gap-5">
               {[spacesProjects[1], spacesProjects[2]].map((project, i) => (
                 <FadeIn key={project.title} delay={(i + 1) * 0.12} className="flex-1">
-                  <a
-                    href={project.href}
-                    className="group relative block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full min-h-[195px]"
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-
-                    <div className="absolute top-4 left-4">
-                      <span className="font-sans text-xs font-medium text-white/80 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full">
-                        {project.category}
-                      </span>
+                  <a href={project.href} className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
+                    <div className="relative overflow-hidden min-h-[160px]">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      />
                     </div>
-
-                    <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                      <ArrowUpRight size={13} className="text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-                    </div>
-
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h3 className="font-display text-xl text-white leading-tight">{project.title}</h3>
+                    <div className="flex items-center justify-between px-4 py-3">
+                      <div>
+                        <p className="font-sans text-xs text-text-muted mb-0.5">{project.category}</p>
+                        <h3 className="font-display text-lg text-text">{project.title}</h3>
+                      </div>
+                      <div className="w-7 h-7 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                        <ArrowUpRight size={13} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
+                      </div>
                     </div>
                   </a>
                 </FadeIn>

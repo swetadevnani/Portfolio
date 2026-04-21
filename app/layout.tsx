@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import { DM_Serif_Display, DM_Sans } from 'next/font/google'
 import { CanvasCursor } from '@/components/CanvasCursor'
+import { ProgressBar } from '@/components/ProgressBar'
 import './globals.css'
 
 
@@ -83,6 +84,7 @@ export default function RootLayout({
       className={`${dmSerifDisplay.variable} ${dmSans.variable}`}
     >
       <body className="bg-background text-text font-sans antialiased">
+        <ProgressBar />
         <CanvasCursor />
         {children}
         <Script
