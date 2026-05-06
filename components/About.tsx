@@ -12,11 +12,15 @@ export default function About() {
           {/* Left: text */}
           <div>
             <h2 className="section-title mb-8">{aboutContent.headline}</h2>
-            {aboutContent.bio.map((paragraph, i) => (
-              <p key={i} className="font-sans text-base text-text-secondary leading-relaxed mb-5">
-                {paragraph}
-              </p>
-            ))}
+            <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+              I&apos;m a product designer who specializes in <strong className="font-semibold text-text">SaaS</strong> — specifically the hard part: taking a vague problem, a demanding user, and a tight timeline, and turning all three into a <strong className="font-semibold text-text">shipped product</strong>. I come from a research background, which means I don&apos;t start with screens; I start with questions.
+            </p>
+            <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+              My workflow is <strong className="font-semibold text-text">AI-native by design</strong> — not because it&apos;s trendy, but because it closes the gap between insight and execution. I use Claude and Cursor to compress discovery timelines, Figma Make to prototype faster, and stay in lockstep with engineers so <strong className="font-semibold text-text">nothing gets lost in handoffs</strong>.
+            </p>
+            <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+              Outside work, I cycle, read obsessively, and occasionally <strong className="font-semibold text-text">build small tools with AI</strong> just to understand what I&apos;m designing for.
+            </p>
             <Link
               href="/about"
               className="inline-flex items-center gap-2 mt-4 font-sans text-sm font-medium text-primary underline underline-offset-4 hover:gap-3 transition-all duration-200"

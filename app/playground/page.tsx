@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
+import Link from 'next/link'
 import Header from '@/components/Header'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -229,10 +230,8 @@ export default function PlaygroundPage() {
 
             {/* Air Draw — wide card */}
             <FadeIn delay={0} className="md:col-span-7">
-              <a
-                href="https://air-draw-steel.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/playground/air-draw"
                 className="group relative block rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 bg-black"
                 style={{ minHeight: 420 }}
               >
@@ -260,16 +259,16 @@ export default function PlaygroundPage() {
                 {/* Bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-7">
                   <div className="flex flex-wrap gap-2 mb-3">
-                    {['Computer Vision', 'Gesture UI', 'MediaPipe'].map(t => (
+                    {['Computer Vision', 'Gesture UI', 'MediaPipe', 'Chrome Extension Concept'].map(t => (
                       <span key={t} className="font-sans text-xs text-white/50 bg-white/10 border border-white/10 px-2.5 py-1 rounded-full">{t}</span>
                     ))}
                   </div>
                   <h3 className="font-display text-3xl text-white mb-1">Air Draw</h3>
                   <p className="font-sans text-sm text-white/50 leading-relaxed max-w-md">
-                    Draw in the air with just your index finger — no touch, no stylus. Point, draw, create.
+                    Built to solve a real presenting problem — point, circle, annotate any screen with just your finger.
                   </p>
                 </div>
-              </a>
+              </Link>
             </FadeIn>
 
             {/* Right column — Dino + Coming Soon */}
