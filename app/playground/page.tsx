@@ -304,8 +304,8 @@ export default function PlaygroundPage() {
                   </div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="font-display text-xl text-white mb-1">Dino Game</h3>
-                    <p className="font-sans text-xs text-white/60">The Chrome offline game, rebuilt & shipped.</p>
+                    <h3 className="font-display text-xl text-white mb-1">Void Runner</h3>
+                    <p className="font-sans text-xs text-white/60">An experiment in prompting a full game into existence — zero game dev experience required.</p>
                   </div>
                 </a>
               </FadeIn>
