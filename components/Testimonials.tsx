@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -31,14 +31,22 @@ const testimonials = [
   },
 ]
 
-// Card = 45vw wide, offset = (100 - 45) / 2 = 27.5vw so active card is always centered
-const CARD_VW = 45
-const GAP_PX = 24
-const OFFSET_VW = (100 - CARD_VW) / 2
+const GAP_PX = 16
 
 export default function Testimonials() {
-  // Start with Mike (index 1) active
   const [current, setCurrent] = useState(1)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+
+  const CARD_VW = isMobile ? 85 : 45
+  const OFFSET_VW = (100 - CARD_VW) / 2
 
   const go = (i: number) =>
     setCurrent(Math.max(0, Math.min(testimonials.length - 1, i)))
@@ -77,7 +85,13 @@ export default function Testimonials() {
       </div>
 
       {/* Carousel track — no padding, offset baked into translate */}
-      <div className="overflow-hidden" style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)', maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)' }}>
+      <div
+        className="overflow-hidden"
+        style={isMobile ? {} : {
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)',
+          maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)',
+        }}
+      >
         <motion.div
           className="flex"
           style={{ gap: `${GAP_PX}px` }}
