@@ -341,7 +341,7 @@ export default function SharpCaseStudy() {
           <FadeUp delay={0.1}>
             <div className="rounded-3xl overflow-hidden bg-background/5 border border-background/10 aspect-[16/9] max-w-4xl mx-auto">
               <iframe
-                src="https://player.vimeo.com/video/1043971502?autoplay=1&loop=1&muted=1&background=1&quality=1080p"
+                src="https://player.vimeo.com/video/1043971502?autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
                 className="w-full h-full"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
