@@ -129,137 +129,76 @@ export default function PlaygroundPage() {
       </section>
 
       {/* ── 2. VIBE CODING EXPERIMENTS ── */}
-      <section className="py-24 bg-[#0E0E0E] border-b border-white/10">
+      <section className="py-24 border-b border-border">
         <div className="container-inner section-padding">
 
           <FadeIn className="flex items-end justify-between mb-12 flex-wrap gap-4">
             <div>
               <p className="font-sans text-xs font-semibold tracking-widest uppercase text-primary mb-3">01 — Vibe Coding Experiments</p>
-              <h2 className="font-display text-4xl md:text-5xl text-white leading-tight">
+              <h2 className="font-display text-4xl md:text-5xl text-text leading-tight">
                 Problems I noticed.<br />Things I built.
               </h2>
             </div>
-            <p className="font-sans text-sm text-white/40 max-w-xs text-right leading-relaxed hidden md:block">
+            <p className="font-sans text-sm text-text-muted max-w-xs text-right leading-relaxed hidden md:block">
               I use AI to close the gap between noticing a problem and having something real in my hands.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
 
             {/* Bloom — wide card */}
-            <FadeIn delay={0} className="md:col-span-7">
-              <Link
-                href="/playground/bloom"
-                className="group relative block rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500"
-                style={{
-                  minHeight: 420,
-                  background: 'linear-gradient(135deg, #2a1a1a 0%, #1a0f0f 40%, #0f0a0a 100%)',
-                }}
-              >
-                {/* Bloom brand warm glow */}
-                <div className="absolute inset-0 opacity-60"
-                  style={{
-                    background: 'radial-gradient(ellipse at 30% 40%, rgba(201,96,78,0.25) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(201,96,78,0.12) 0%, transparent 50%)',
-                  }}
-                />
-
-                {/* Optional preview image — shown if available */}
-                <img
-                  src="/images/bloom-preview.jpg"
-                  alt="Bloom app"
-                  className="absolute inset-0 w-full h-full object-cover object-top opacity-30 group-hover:opacity-45 transition-opacity duration-700"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
-
-                {/* Badge */}
-                <div className="absolute top-5 left-5">
-                  <span className="flex items-center gap-1.5 font-sans text-xs font-medium text-white/80 bg-white/10 backdrop-blur-md border border-white/15 px-3 py-1.5 rounded-full">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                    Passion project · In progress
-                  </span>
+            <FadeIn delay={0} className="md:col-span-7 flex flex-col">
+              <Link href="/playground/bloom" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500">
+                <div className="relative overflow-hidden min-h-[340px]">
+                  <img src="/images/bloom-preview.jpg" alt="Bloom app" className="w-full h-full absolute inset-0 object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
-
-                <div className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                  <ArrowUpRight size={15} className="text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-                </div>
-
-                {/* Bottom content */}
-                <div className="absolute bottom-0 left-0 right-0 p-7">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {['PCOS Management', 'Habit Tracking', 'Ingredient Scanner', 'iOS'].map(t => (
-                      <span key={t} className="font-sans text-xs text-white/50 bg-white/10 border border-white/10 px-2.5 py-1 rounded-full">{t}</span>
-                    ))}
+                <div className="flex items-center justify-between px-5 py-4">
+                  <div>
+                    <p className="font-sans text-xs text-text-muted mb-0.5">PCOS Management · Habit Tracking · iOS</p>
+                    <h3 className="font-display text-xl text-text">Bloom</h3>
                   </div>
-                  <h3 className="font-display text-4xl text-white mb-2">Bloom</h3>
-                  <p className="font-sans text-sm text-white/55 leading-relaxed max-w-md">
-                    Built because I had PCOS and no app understood what I actually needed. A companion for the everyday — symptoms, habits, and what&apos;s in your products.
-                  </p>
+                  <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <ArrowUpRight size={14} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
+                  </div>
                 </div>
               </Link>
             </FadeIn>
 
             {/* Right column — Air Draw + Void Runner */}
-            <div className="md:col-span-5 flex flex-col gap-5">
+            <div className="md:col-span-5 flex flex-col gap-4 md:gap-5">
 
               {/* Air Draw */}
               <FadeIn delay={0.12} className="flex-1">
-                <Link
-                  href="/playground/air-draw"
-                  className="group relative block rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 bg-black"
-                  style={{ minHeight: 195 }}
-                >
-                  <img
-                    src="/images/air-draw-preview.jpg"
-                    alt="Air Draw experiment"
-                    className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out opacity-75 group-hover:opacity-95"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className="flex items-center gap-1.5 font-sans text-xs font-medium text-white/80 bg-black/30 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                      Live
-                    </span>
+                <Link href="/playground/air-draw" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
+                  <div className="relative overflow-hidden min-h-[160px]">
+                    <img src="/images/air-draw-preview.jpg" alt="Air Draw experiment" className="w-full h-full absolute inset-0 object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" />
                   </div>
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/30 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                    <ArrowUpRight size={13} className="text-white" />
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="font-display text-xl text-white mb-1">Air Draw</h3>
-                    <p className="font-sans text-xs text-white/50">Draw on any screen with just your index finger.</p>
+                  <div className="flex items-center justify-between px-4 py-3">
+                    <div>
+                      <p className="font-sans text-xs text-text-muted mb-0.5">Computer Vision · Gesture UI</p>
+                      <h3 className="font-display text-lg text-text">Air Draw</h3>
+                    </div>
+                    <div className="w-7 h-7 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                      <ArrowUpRight size={13} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
+                    </div>
                   </div>
                 </Link>
               </FadeIn>
 
               {/* Void Runner */}
               <FadeIn delay={0.22} className="flex-1">
-                <a
-                  href="https://sweta-dino-game.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative block rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 bg-white"
-                  style={{ minHeight: 195 }}
-                >
-                  <img
-                    src="/images/dino-preview.jpg"
-                    alt="Void Runner experiment"
-                    className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className="flex items-center gap-1.5 font-sans text-xs font-medium text-white/90 bg-black/30 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                      Live
-                    </span>
+                <a href="https://sweta-dino-game.vercel.app" target="_blank" rel="noopener noreferrer" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
+                  <div className="relative overflow-hidden min-h-[160px]">
+                    <img src="/images/dino-preview.jpg" alt="Void Runner experiment" className="w-full h-full absolute inset-0 object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" />
                   </div>
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/30 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                    <ArrowUpRight size={13} className="text-white" />
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="font-display text-xl text-white mb-1">Void Runner</h3>
-                    <p className="font-sans text-xs text-white/60">An experiment in prompting a full game into existence.</p>
+                  <div className="flex items-center justify-between px-4 py-3">
+                    <div>
+                      <p className="font-sans text-xs text-text-muted mb-0.5">Browser Game · Vibe Coded</p>
+                      <h3 className="font-display text-lg text-text">Void Runner</h3>
+                    </div>
+                    <div className="w-7 h-7 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                      <ArrowUpRight size={13} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
+                    </div>
                   </div>
                 </a>
               </FadeIn>
