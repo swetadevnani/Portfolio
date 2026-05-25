@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+
 const MAGIC_WORDS = ['magic', 'chaos', 'ideas', 'fun', 'work', 'magic']
 
 function FadeIn({
@@ -39,33 +40,28 @@ const spacesProjects = [
     category: 'Public · Recreation',
     image: '/images/about-space-1.jpg',
     href: '/playground/spaces/amusement-park',
-    accent: '#C0305E',
   },
   {
     title: 'Residential Interior',
     category: 'Residential',
     image: '/images/about-space-2.jpg',
     href: '/playground/spaces/residential',
-    accent: '#8B4513',
   },
   {
     title: 'Farm House Architecture',
     category: 'Recreational',
     image: '/images/about-space-3.jpg',
     href: '/playground/spaces/bogota-cafe',
-    accent: '#2D6A4F',
   },
 ]
 
 export default function PlaygroundPage() {
-  // Word swap
   const [wordIdx, setWordIdx] = useState(0)
   useEffect(() => {
     const t = setInterval(() => setWordIdx(i => (i + 1) % MAGIC_WORDS.length), 2000)
     return () => clearInterval(t)
   }, [])
 
-  // Blob cursor
   const [blob, setBlob] = useState({ x: -300, y: -300 })
   const heroRef = useRef<HTMLElement>(null)
   useEffect(() => {
@@ -83,16 +79,12 @@ export default function PlaygroundPage() {
     <main className="min-h-screen bg-background">
       <Header />
 
-      {/* ── 1. HERO ──────────────────────────────────────── */}
+      {/* ── 1. HERO ── */}
       <section ref={heroRef} className="relative pt-32 pb-28 border-b border-border overflow-hidden">
-
-        {/* Blob that follows cursor */}
         <div
           className="pointer-events-none absolute z-0 w-[420px] h-[420px] rounded-full bg-primary/15 blur-[100px] transition-transform duration-75"
           style={{ left: blob.x - 210, top: blob.y - 210 }}
         />
-
-        {/* Scattered floating tags — decorative */}
         <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
           {[
             { label: 'Architecture',    top: '22%', left: '12%',  rotate: -6, delay: 0.40 },
@@ -114,8 +106,6 @@ export default function PlaygroundPage() {
             </motion.div>
           ))}
         </div>
-
-        {/* Centered content */}
         <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 min-h-[340px]">
           <motion.h1
             initial={{ opacity: 0, y: 32 }}
@@ -138,14 +128,154 @@ export default function PlaygroundPage() {
         </div>
       </section>
 
-      {/* ── 2. SPACES DESIGN WORK ────────────────────────── */}
+      {/* ── 2. VIBE CODING EXPERIMENTS ── */}
+      <section className="py-24 bg-[#0E0E0E] border-b border-white/10">
+        <div className="container-inner section-padding">
+
+          <FadeIn className="flex items-end justify-between mb-12 flex-wrap gap-4">
+            <div>
+              <p className="font-sans text-xs font-semibold tracking-widest uppercase text-primary mb-3">01 — Vibe Coding Experiments</p>
+              <h2 className="font-display text-4xl md:text-5xl text-white leading-tight">
+                Problems I noticed.<br />Things I built.
+              </h2>
+            </div>
+            <p className="font-sans text-sm text-white/40 max-w-xs text-right leading-relaxed hidden md:block">
+              I use AI to close the gap between noticing a problem and having something real in my hands.
+            </p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+
+            {/* Bloom — wide card */}
+            <FadeIn delay={0} className="md:col-span-7">
+              <Link
+                href="/playground/bloom"
+                className="group relative block rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500"
+                style={{
+                  minHeight: 420,
+                  background: 'linear-gradient(135deg, #2a1a1a 0%, #1a0f0f 40%, #0f0a0a 100%)',
+                }}
+              >
+                {/* Bloom brand warm glow */}
+                <div className="absolute inset-0 opacity-60"
+                  style={{
+                    background: 'radial-gradient(ellipse at 30% 40%, rgba(201,96,78,0.25) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(201,96,78,0.12) 0%, transparent 50%)',
+                  }}
+                />
+
+                {/* Optional preview image — shown if available */}
+                <img
+                  src="/images/bloom-preview.jpg"
+                  alt="Bloom app"
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-30 group-hover:opacity-45 transition-opacity duration-700"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
+
+                {/* Badge */}
+                <div className="absolute top-5 left-5">
+                  <span className="flex items-center gap-1.5 font-sans text-xs font-medium text-white/80 bg-white/10 backdrop-blur-md border border-white/15 px-3 py-1.5 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                    Passion project · In progress
+                  </span>
+                </div>
+
+                <div className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                  <ArrowUpRight size={15} className="text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
+                </div>
+
+                {/* Bottom content */}
+                <div className="absolute bottom-0 left-0 right-0 p-7">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {['PCOS Management', 'Habit Tracking', 'Ingredient Scanner', 'iOS'].map(t => (
+                      <span key={t} className="font-sans text-xs text-white/50 bg-white/10 border border-white/10 px-2.5 py-1 rounded-full">{t}</span>
+                    ))}
+                  </div>
+                  <h3 className="font-display text-4xl text-white mb-2">Bloom</h3>
+                  <p className="font-sans text-sm text-white/55 leading-relaxed max-w-md">
+                    Built because I had PCOS and no app understood what I actually needed. A companion for the everyday — symptoms, habits, and what&apos;s in your products.
+                  </p>
+                </div>
+              </Link>
+            </FadeIn>
+
+            {/* Right column — Air Draw + Void Runner */}
+            <div className="md:col-span-5 flex flex-col gap-5">
+
+              {/* Air Draw */}
+              <FadeIn delay={0.12} className="flex-1">
+                <Link
+                  href="/playground/air-draw"
+                  className="group relative block rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 bg-black"
+                  style={{ minHeight: 195 }}
+                >
+                  <img
+                    src="/images/air-draw-preview.jpg"
+                    alt="Air Draw experiment"
+                    className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out opacity-75 group-hover:opacity-95"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="flex items-center gap-1.5 font-sans text-xs font-medium text-white/80 bg-black/30 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                      Live
+                    </span>
+                  </div>
+                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/30 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <ArrowUpRight size={13} className="text-white" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="font-display text-xl text-white mb-1">Air Draw</h3>
+                    <p className="font-sans text-xs text-white/50">Draw on any screen with just your index finger.</p>
+                  </div>
+                </Link>
+              </FadeIn>
+
+              {/* Void Runner */}
+              <FadeIn delay={0.22} className="flex-1">
+                <a
+                  href="https://sweta-dino-game.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 bg-white"
+                  style={{ minHeight: 195 }}
+                >
+                  <img
+                    src="/images/dino-preview.jpg"
+                    alt="Void Runner experiment"
+                    className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="flex items-center gap-1.5 font-sans text-xs font-medium text-white/90 bg-black/30 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                      Live
+                    </span>
+                  </div>
+                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/30 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <ArrowUpRight size={13} className="text-white" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="font-display text-xl text-white mb-1">Void Runner</h3>
+                    <p className="font-sans text-xs text-white/60">An experiment in prompting a full game into existence.</p>
+                  </div>
+                </a>
+              </FadeIn>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. ARCHITECTURE ── */}
       <section className="py-24 border-b border-border">
         <div className="container-inner section-padding">
 
-          {/* Section header */}
           <FadeIn className="flex items-end justify-between mb-12 flex-wrap gap-4">
             <div>
-              <p className="font-sans text-xs font-semibold tracking-widest uppercase text-primary mb-3">01 — Spaces</p>
+              <p className="font-sans text-xs font-semibold tracking-widest uppercase text-primary mb-3">02 — Spaces</p>
               <h2 className="font-display text-4xl md:text-5xl text-text leading-tight">
                 Before pixels,<br />I designed spaces.
               </h2>
@@ -155,18 +285,11 @@ export default function PlaygroundPage() {
             </p>
           </FadeIn>
 
-          {/* Asymmetric bento grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
-
-            {/* Big card — takes 7 cols, full height */}
             <FadeIn delay={0} className="md:col-span-7 flex flex-col">
               <a href={spacesProjects[0].href} className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500">
                 <div className="relative overflow-hidden min-h-[340px]">
-                  <img
-                    src={spacesProjects[0].image}
-                    alt={spacesProjects[0].title}
-                    className="w-full h-full absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
+                  <img src={spacesProjects[0].image} alt={spacesProjects[0].title} className="w-full h-full absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <div className="flex items-center justify-between px-5 py-4">
                   <div>
@@ -180,17 +303,12 @@ export default function PlaygroundPage() {
               </a>
             </FadeIn>
 
-            {/* Two stacked cards — 5 cols */}
             <div className="md:col-span-5 flex flex-col gap-4 md:gap-5">
               {[spacesProjects[1], spacesProjects[2]].map((project, i) => (
                 <FadeIn key={project.title} delay={(i + 1) * 0.12} className="flex-1">
                   <a href={project.href} className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
                     <div className="relative overflow-hidden min-h-[160px]">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                      />
+                      <img src={project.image} alt={project.title} className="w-full h-full absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                     </div>
                     <div className="flex items-center justify-between px-4 py-3">
                       <div>
@@ -209,137 +327,7 @@ export default function PlaygroundPage() {
         </div>
       </section>
 
-      {/* ── 3. SIDE EXPERIMENTS ──────────────────────────── */}
-      <section className="py-24 bg-[#0E0E0E] border-b border-white/10">
-        <div className="container-inner section-padding">
-
-          {/* Section header — light on dark */}
-          <FadeIn className="flex items-end justify-between mb-12 flex-wrap gap-4">
-            <div>
-              <p className="font-sans text-xs font-semibold tracking-widest uppercase text-primary mb-3">02 — Side Experiments</p>
-              <h2 className="font-display text-4xl md:text-5xl text-white leading-tight">
-                Things I build<br />to understand.
-              </h2>
-            </div>
-            <p className="font-sans text-sm text-white/40 max-w-xs text-right leading-relaxed hidden md:block">
-              AI-native isn&apos;t a buzzword. I ship small experiments — sometimes to test an idea, sometimes just for fun.
-            </p>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-
-            {/* Air Draw — wide card */}
-            <FadeIn delay={0} className="md:col-span-7">
-              <Link
-                href="/playground/air-draw"
-                className="group relative block rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 bg-black"
-                style={{ minHeight: 420 }}
-              >
-                {/* Screenshot */}
-                <img
-                  src="/images/air-draw-preview.jpg"
-                  alt="Air Draw experiment"
-                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-100"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-
-                {/* Badge */}
-                <div className="absolute top-5 left-5 flex items-center gap-2">
-                  <span className="flex items-center gap-1.5 font-sans text-xs font-medium text-white/80 bg-white/10 backdrop-blur-md border border-white/15 px-3 py-1.5 rounded-full">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    Live experiment
-                  </span>
-                </div>
-
-                <div className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                  <ArrowUpRight size={15} className="text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-                </div>
-
-                {/* Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-7">
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {['Computer Vision', 'Gesture UI', 'MediaPipe', 'Chrome Extension Concept'].map(t => (
-                      <span key={t} className="font-sans text-xs text-white/50 bg-white/10 border border-white/10 px-2.5 py-1 rounded-full">{t}</span>
-                    ))}
-                  </div>
-                  <h3 className="font-display text-3xl text-white mb-1">Air Draw</h3>
-                  <p className="font-sans text-sm text-white/50 leading-relaxed max-w-md">
-                    Built to solve a real presenting problem — point, circle, annotate any screen with just your finger.
-                  </p>
-                </div>
-              </Link>
-            </FadeIn>
-
-            {/* Right column — Dino + Coming Soon */}
-            <div className="md:col-span-5 flex flex-col gap-5">
-
-              {/* Dino Game */}
-              <FadeIn delay={0.12} className="flex-1">
-                <a
-                  href="https://sweta-dino-game.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative block rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 bg-white"
-                  style={{ minHeight: 195 }}
-                >
-                  <img
-                    src="/images/dino-preview.jpg"
-                    alt="Dino Game experiment"
-                    className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  {/* Light gradient — since this is a light-bg screenshot */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-transparent" />
-
-                  <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <span className="flex items-center gap-1.5 font-sans text-xs font-medium text-white/90 bg-black/30 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                      Live experiment
-                    </span>
-                  </div>
-
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/30 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                    <ArrowUpRight size={13} className="text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-                  </div>
-
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="font-display text-xl text-white mb-1">Void Runner</h3>
-                    <p className="font-sans text-xs text-white/60">An experiment in prompting a full game into existence — zero game dev experience required.</p>
-                  </div>
-                </a>
-              </FadeIn>
-
-              {/* More coming soon */}
-              <FadeIn delay={0.22} className="flex-1">
-                <div
-                  className="relative block rounded-3xl border border-dashed border-white/15 flex flex-col items-center justify-center text-center p-8"
-                  style={{ minHeight: 195 }}
-                >
-                  {/* Subtle dot grid */}
-                  <div className="absolute inset-0 rounded-3xl opacity-20"
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, rgba(192,48,94,0.6) 1px, transparent 1px)',
-                      backgroundSize: '18px 18px',
-                    }}
-                  />
-                  <div className="relative z-10">
-                    <div className="w-10 h-10 rounded-full border border-dashed border-white/20 flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white/30 text-xl leading-none">+</span>
-                    </div>
-                    <p className="font-display text-xl text-white/40 mb-1">Next experiment</p>
-                    <p className="font-sans text-xs text-white/25 leading-relaxed">
-                      Always tinkering.<br />Something&apos;s in progress.
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. THE THREAD ────────────────────────────────── */}
+      {/* ── 4. THE THREAD ── */}
       <section className="py-24 border-b border-border">
         <div className="container-inner section-padding">
           <FadeIn>
@@ -348,7 +336,6 @@ export default function PlaygroundPage() {
               Spatial thinking<br />travels well.
             </h2>
           </FadeIn>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               {
