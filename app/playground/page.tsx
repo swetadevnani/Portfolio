@@ -209,7 +209,7 @@ export default function PlaygroundPage() {
       </section>
 
       {/* ── 3. ARCHITECTURE ── */}
-      <section className="py-24 border-b border-border">
+      <section id="spaces" className="py-24 border-b border-border">
         <div className="container-inner section-padding">
 
           <FadeIn className="flex items-end justify-between mb-12 flex-wrap gap-4">

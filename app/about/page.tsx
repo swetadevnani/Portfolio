@@ -191,7 +191,7 @@ export default function AboutPage() {
               <p className="font-sans text-base text-text-secondary leading-relaxed mb-8">
                 Different medium. Same problem. The job is always to make the experience feel right — even the parts that feel invisible.
               </p>
-              <a href="/playground" className="font-sans text-sm text-primary underline underline-offset-4 hover:text-primary/70 transition-colors">
+              <a href="/playground#spaces" className="font-sans text-sm text-primary underline underline-offset-4 hover:text-primary/70 transition-colors">
                 See my architecture & interior work →
               </a>
             </div>
@@ -254,15 +254,29 @@ export default function AboutPage() {
               <p className="section-label mb-3">Experience</p>
               <h2 className="section-title">Shipping &<br />giving back.</h2>
             </div>
-            <div className="divide-y divide-border">
-              {timeline.map((item, i) => (
-                <div key={i} className="py-8 first:pt-0">
-                  <p className="font-sans text-xs text-text-muted mb-1">{item.period}</p>
-                  <p className="font-sans text-sm font-semibold text-text mb-0.5">{item.role}</p>
-                  <p className="font-sans text-xs text-primary mb-3">{item.company}</p>
-                  <p className="font-sans text-sm text-text-secondary leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+            <div>
+              <div className="divide-y divide-border mb-10">
+                {timeline.map((item, i) => (
+                  <div key={i} className="py-8 first:pt-0">
+                    <p className="font-sans text-xs text-text-muted mb-1">{item.period}</p>
+                    <p className="font-sans text-sm font-semibold text-text mb-0.5">{item.role}</p>
+                    <p className="font-sans text-xs text-primary mb-3">{item.company}</p>
+                    <p className="font-sans text-sm text-text-secondary leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+              {/* Event photos */}
+              <div className="grid grid-cols-3 gap-3">
+                {['Events1.jpeg', 'Events2.jpeg', 'Events3.jpeg'].map((img, i) => (
+                  <div key={i} className="rounded-2xl overflow-hidden aspect-square shadow-card">
+                    <img
+                      src={`/images/${img}`}
+                      alt="Community event"
+                      className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </FadeIn>
         </div>
