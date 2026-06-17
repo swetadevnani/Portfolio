@@ -56,19 +56,6 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: 'nestaid',
-    title: 'NestAid — AI-Powered Caregiving Operations',
-    context: 'SaaS · AI Agents · Product Design',
-    role: 'Product Designer',
-    description:
-      'Conducted secondary research that pivoted NestAid from a B2C caregiving marketplace to a B2B AI operations platform — powered by Nessa, an AI agent that automates scheduling and workforce management for caregiving agencies.',
-    tags: ['SaaS', 'AI Agents', 'UX Research'],
-    image: 'nestaid.png',
-    imageCacheBust: '2',
-    accentColor: '#C1694F',
-    href: '/work/nestaid',
-  },
-  {
     id: 'usher',
     title: 'Usher Mobile App',
     context: 'Thesis Capstone Project',
@@ -80,6 +67,19 @@ export const caseStudies: CaseStudy[] = [
     image: 'usher.png',
     accentColor: '#E8A87C',
     href: '/work/usher',
+  },
+  {
+    id: 'nestaid',
+    title: 'NestAid — AI-Powered Caregiving Operations',
+    context: 'SaaS · AI Agents · Product Design',
+    role: 'Product Designer',
+    description:
+      'Conducted secondary research that pivoted NestAid from a B2C caregiving marketplace to a B2B AI operations platform — powered by Nessa, an AI agent that automates scheduling and workforce management for caregiving agencies.',
+    tags: ['SaaS', 'AI Agents', 'UX Research'],
+    image: 'nestaid.png',
+    imageCacheBust: '2',
+    accentColor: '#C1694F',
+    href: '/work/nestaid',
   },
   {
     id: 'constant',
