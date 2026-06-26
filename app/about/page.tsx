@@ -152,7 +152,7 @@ export default function AboutPage() {
                 <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
                   LinkedIn <ArrowUpRight size={14} />
                 </a>
-                <a href="/resume.pdf" download="Sweta_Devnani_Resume.pdf" className="btn-secondary inline-flex items-center gap-2">
+                <a href="https://drive.google.com/file/d/1jHAKqlkD01ATLkCpeoO21z5SEYfC-8pA/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
                   <Download size={14} /> Resume
                 </a>
               </div>
