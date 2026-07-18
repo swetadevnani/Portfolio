@@ -434,7 +434,9 @@ export default function UsherCaseStudy() {
                 <iframe
                   src={toYouTubeEmbedUrl(siteConfig.usherMockupVideoUrl)}
                   title="Usher prototype walkthrough"
-                  className="object-cover object-center"
+                  width="100%"
+                  height="100%"
+                  style={{ position: 'absolute', inset: 0 }}
                   allow="autoplay; fullscreen"
                   allowFullScreen
                 />
@@ -563,7 +565,7 @@ export default function UsherCaseStudy() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <FadeUp>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
-                <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
+                <div className="relative aspect-[4/3] bg-surface border-b border-border">
                   <Image
                     src="/images/usher-lofi.jpg"
                     alt="Usher lo-fi wireframes"
@@ -586,7 +588,7 @@ export default function UsherCaseStudy() {
 
             <FadeUp delay={0.08}>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
-                <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
+                <div className="relative aspect-[4/3] bg-surface border-b border-border">
                   <Image
                     src="/images/usher-ui-kit.jpg"
                     alt="Usher UI kit and components"
@@ -610,7 +612,7 @@ export default function UsherCaseStudy() {
 
           <FadeUp delay={0.1}>
             <div className="bg-background rounded-2xl border border-border overflow-hidden">
-              <div className="aspect-[16/7] bg-surface flex items-center justify-center border-b border-border">
+              <div className="relative aspect-[16/7] bg-surface border-b border-border">
                 <Image
                   src="/images/usher-hifi.jpg"
                   alt="Usher hi-fi screens"

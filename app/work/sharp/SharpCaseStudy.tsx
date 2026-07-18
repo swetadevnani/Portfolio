@@ -595,7 +595,7 @@ export default function SharpCaseStudy() {
             {/* Lo-fi */}
             <FadeUp>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
-                <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
+                <div className="relative aspect-[4/3] bg-surface border-b border-border">
                   <Image
                     src="/images/sharp-lofi.jpg"
                     alt="Sharp lo-fi wireframes"
@@ -616,7 +616,7 @@ export default function SharpCaseStudy() {
             {/* UI Kit */}
             <FadeUp delay={0.08}>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
-                <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
+                <div className="relative aspect-[4/3] bg-surface border-b border-border">
                   <Image
                     src="/images/sharp-uikit.jpg"
                     alt="Sharp UI kit"
@@ -638,7 +638,7 @@ export default function SharpCaseStudy() {
           {/* Hi-fi full width */}
           <FadeUp delay={0.1}>
             <div className="bg-background rounded-2xl border border-border overflow-hidden">
-              <div className="aspect-[16/7] bg-surface flex items-center justify-center border-b border-border">
+              <div className="relative aspect-[16/7] bg-surface border-b border-border">
                 <Image
                   src="/images/sharp-hifi.jpg"
                   alt="Sharp hi-fi wireframes"

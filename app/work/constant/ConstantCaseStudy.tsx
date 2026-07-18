@@ -33,7 +33,8 @@ function PhoneFrame({ src, alt }: { src: string; alt: string }) {
           position: 'relative',
         }}
       >
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={src}
           alt={alt}
           style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -731,7 +732,7 @@ export default function ConstantCaseStudy() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <FadeUp>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
-                <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
+                <div className="relative aspect-[4/3] bg-surface border-b border-border">
                   <Image
                     src="/images/constant-lofi.jpg"
                     alt="Constant lo-fi wireframes"
@@ -754,7 +755,7 @@ export default function ConstantCaseStudy() {
 
             <FadeUp delay={0.08}>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
-                <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
+                <div className="relative aspect-[4/3] bg-surface border-b border-border">
                   <Image
                     src="/images/constant-ui-kit.jpg"
                     alt="Constant UI exploration and components"
@@ -778,7 +779,7 @@ export default function ConstantCaseStudy() {
 
           <FadeUp delay={0.1}>
             <div className="bg-background rounded-2xl border border-border overflow-hidden">
-              <div className="aspect-[16/7] bg-surface flex items-center justify-center border-b border-border">
+              <div className="relative aspect-[16/7] bg-surface border-b border-border">
                 <Image
                   src="/images/constant-hifi.jpg"
                   alt="Constant hi-fi screens"
