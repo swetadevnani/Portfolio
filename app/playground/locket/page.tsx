@@ -326,7 +326,7 @@ export default function LocketPage() {
                 Figma · Merriweather + Nunito Sans · Terracotta & Cream · 6 screens · 1 week
               </p>
               <a
-                href="https://www.figma.com"
+                href="https://www.figma.com/proto/im8z061u2cDELglU4eaokM/Locket-App-Documentation---Sweta-Devnani--Perpay-Assignmnet---Copy-?page-id=2127%3A1994&node-id=2127-3577&viewport=704%2C408%2C0.02&t=7EcYaJsmBKMNxXdK-1&scaling=contain&content-scaling=fixed"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-2"
