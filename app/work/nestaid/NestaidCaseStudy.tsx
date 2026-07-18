@@ -327,7 +327,7 @@ export default function NestaidCaseStudy() {
                   </span>
                   <span className="font-sans text-sm text-text-muted">B2C Marketplace</span>
                 </div>
-                <div className="rounded-2xl overflow-hidden border border-border shadow-card aspect-[4/3] bg-background">
+                <div className="relative rounded-2xl overflow-hidden border border-border shadow-card aspect-[4/3] bg-background">
                   <Image
                     src="/images/nestaid-before.jpg"
                     alt="NestAid original B2C website"
@@ -350,7 +350,7 @@ export default function NestaidCaseStudy() {
                   </span>
                   <span className="font-sans text-sm text-text-muted">B2B SaaS Platform</span>
                 </div>
-                <div className="rounded-2xl overflow-hidden border border-primary/20 shadow-card aspect-[4/3] bg-background">
+                <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-card aspect-[4/3] bg-background">
                   <Image
                     src="/images/nestaid-after.jpg"
                     alt="NestAid new B2B platform"

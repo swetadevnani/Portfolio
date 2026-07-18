@@ -201,10 +201,10 @@ export default function AboutPage() {
           {/* Architecture photo */}
           <FadeIn delay={0.1}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-card">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-card">
                 <Image src="/images/sweta-architecture.jpg" alt="Sweta on an architecture project site" fill className="object-cover object-center" />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-card">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-card">
                 <Image src="/images/about-space-3.jpg" alt="Farmhouse project" fill className="object-cover object-center" />
               </div>
             </div>

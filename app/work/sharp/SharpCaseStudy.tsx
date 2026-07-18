@@ -503,11 +503,11 @@ export default function SharpCaseStudy() {
               The Existing User Manual
             </p>
             <div className="rounded-3xl overflow-hidden border border-border bg-surface">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/images/sharp-manual.jpg"
                 alt="Sharp existing user manual — text-heavy layout"
-                      fill
-                className="w-full h-auto object-cover object-top"
+                className="w-full h-auto block"
               />
             </div>
           </FadeUp>
