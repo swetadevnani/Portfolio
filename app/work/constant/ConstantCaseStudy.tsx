@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight, ArrowLeft } from 'lucide-react'
 import CaseStudyHeader from '@/components/CaseStudyHeader'
 import Footer from '@/components/Footer'
@@ -32,7 +33,7 @@ function PhoneFrame({ src, alt }: { src: string; alt: string }) {
           position: 'relative',
         }}
       >
-        <img
+        <Image
           src={src}
           alt={alt}
           style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -443,7 +444,7 @@ export default function ConstantCaseStudy() {
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="object-cover object-center"
               />
             </div>
           </FadeUp>
@@ -731,9 +732,10 @@ export default function ConstantCaseStudy() {
             <FadeUp>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
                 <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
-                  <img
-                    src="/images/constant-lofi.png"
+                  <Image
+                    src="/images/constant-lofi.jpg"
                     alt="Constant lo-fi wireframes"
+                      fill
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -753,9 +755,10 @@ export default function ConstantCaseStudy() {
             <FadeUp delay={0.08}>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
                 <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
-                  <img
-                    src="/images/constant-ui-kit.png"
+                  <Image
+                    src="/images/constant-ui-kit.jpg"
                     alt="Constant UI exploration and components"
+                      fill
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -776,9 +779,10 @@ export default function ConstantCaseStudy() {
           <FadeUp delay={0.1}>
             <div className="bg-background rounded-2xl border border-border overflow-hidden">
               <div className="aspect-[16/7] bg-surface flex items-center justify-center border-b border-border">
-                <img
-                  src="/images/constant-hifi.png"
+                <Image
+                  src="/images/constant-hifi.jpg"
                   alt="Constant hi-fi screens"
+                      fill
                   className="w-full h-full object-cover object-top"
                 />
               </div>

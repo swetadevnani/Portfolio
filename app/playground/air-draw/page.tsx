@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowUpRight, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -66,9 +67,10 @@ export default function AirDrawPage() {
           {/* Preview image / live link */}
           <FadeIn delay={0.1} className="mt-12">
             <div className="relative rounded-3xl overflow-hidden border border-white/10" style={{ minHeight: 480 }}>
-              <img
+              <Image
                 src="/images/air-draw-preview.jpg"
                 alt="Air Draw in action"
+                  fill
                 className="w-full h-full object-cover object-center"
                 style={{ minHeight: 480 }}
               />

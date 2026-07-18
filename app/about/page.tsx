@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowUpRight, Download } from 'lucide-react'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -94,7 +95,7 @@ function FlipCards() {
             }}
           >
             <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-card" style={{ backfaceVisibility: 'hidden' }}>
-              <img src={item.image} alt={item.label} className="w-full h-full object-cover" />
+              <Image src={item.image} alt={item.label} fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
               <div className="absolute bottom-4 left-4">
                 <span className="text-2xl">{item.emoji}</span>
@@ -162,7 +163,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div aria-hidden="true" className="absolute inset-0 rounded-3xl border-2 border-primary/20 translate-x-4 translate-y-4" />
                 <div className="relative bg-surface rounded-3xl overflow-hidden aspect-[4/5] shadow-card">
-                  <img src="/images/sweta-cherry.jpg" alt={siteConfig.fullName} className="w-full h-full object-cover object-top" />
+                  <Image src="/images/sweta-cherry.jpg" alt={siteConfig.fullName} fill className="object-cover object-top" />
                 </div>
               </div>
             </FadeIn>
@@ -201,10 +202,10 @@ export default function AboutPage() {
           <FadeIn delay={0.1}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-card">
-                <img src="/images/sweta-architecture.jpg" alt="Sweta on an architecture project site" className="w-full h-full object-cover object-center" />
+                <Image src="/images/sweta-architecture.jpg" alt="Sweta on an architecture project site" fill className="object-cover object-center" />
               </div>
               <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-card">
-                <img src="/images/about-space-3.jpg" alt="Farmhouse project" className="w-full h-full object-cover object-center" />
+                <Image src="/images/about-space-3.jpg" alt="Farmhouse project" fill className="object-cover object-center" />
               </div>
             </div>
           </FadeIn>
@@ -268,11 +269,12 @@ export default function AboutPage() {
               {/* Event photos */}
               <div className="grid grid-cols-3 gap-3">
                 {['Events1.jpeg', 'Events2.jpeg', 'Events3.jpeg'].map((img, i) => (
-                  <div key={i} className="rounded-2xl overflow-hidden aspect-square shadow-card">
-                    <img
+                  <div key={i} className="relative rounded-2xl overflow-hidden aspect-square shadow-card">
+                    <Image
                       src={`/images/${img}`}
                       alt="Community event"
-                      className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+                      fill
+                      className="object-cover object-center hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 ))}

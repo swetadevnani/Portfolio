@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { aboutContent, siteConfig } from '@/lib/data'
 
 export default function About() {
@@ -30,11 +31,12 @@ export default function About() {
             </Link>
           </div>
           {/* Right: presenting photo */}
-          <div className="rounded-2xl overflow-hidden shadow-card">
-            <img
+          <div className="relative rounded-2xl overflow-hidden shadow-card aspect-[4/3]">
+            <Image
               src="/images/sweta-presenting.jpg"
               alt="Sweta presenting at a design event"
-              className="w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
             />
           </div>
         </div>

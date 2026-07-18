@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight, ArrowLeft } from 'lucide-react'
 import CaseStudyHeader from '@/components/CaseStudyHeader'
 import Footer from '@/components/Footer'
@@ -433,7 +434,7 @@ export default function UsherCaseStudy() {
                 <iframe
                   src={toYouTubeEmbedUrl(siteConfig.usherMockupVideoUrl)}
                   title="Usher prototype walkthrough"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="object-cover object-center"
                   allow="autoplay; fullscreen"
                   allowFullScreen
                 />
@@ -444,7 +445,7 @@ export default function UsherCaseStudy() {
                   muted
                   loop
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="object-cover object-center"
                 />
               )}
             </div>
@@ -563,9 +564,10 @@ export default function UsherCaseStudy() {
             <FadeUp>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
                 <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
-                  <img
-                    src="/images/usher-lofi.png"
+                  <Image
+                    src="/images/usher-lofi.jpg"
                     alt="Usher lo-fi wireframes"
+                      fill
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -585,9 +587,10 @@ export default function UsherCaseStudy() {
             <FadeUp delay={0.08}>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
                 <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
-                  <img
-                    src="/images/usher-ui-kit.png"
+                  <Image
+                    src="/images/usher-ui-kit.jpg"
                     alt="Usher UI kit and components"
+                      fill
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -608,9 +611,10 @@ export default function UsherCaseStudy() {
           <FadeUp delay={0.1}>
             <div className="bg-background rounded-2xl border border-border overflow-hidden">
               <div className="aspect-[16/7] bg-surface flex items-center justify-center border-b border-border">
-                <img
-                  src="/images/usher-hifi.png"
+                <Image
+                  src="/images/usher-hifi.jpg"
                   alt="Usher hi-fi screens"
+                      fill
                   className="w-full h-full object-cover object-top"
                 />
               </div>

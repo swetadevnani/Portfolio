@@ -64,7 +64,7 @@ export const caseStudies: CaseStudy[] = [
       'Led UX research and design of an AI-powered academic resource app integrating Canvas and library systems. Validated through 12 interviews and 3 pretotyping experiments.',
     tags: ['AI/ML', 'User Research', 'Mobile Design'],
     metrics: ['92% task success rate', '75% user preference over Google', '12 user interviews'],
-    image: 'usher.png',
+    image: 'usher.jpg',
     accentColor: '#E8A87C',
     href: '/work/usher',
   },
@@ -76,7 +76,7 @@ export const caseStudies: CaseStudy[] = [
     description:
       'Conducted secondary research that pivoted NestAid from a B2C caregiving marketplace to a B2B AI operations platform — powered by Nessa, an AI agent that automates scheduling and workforce management for caregiving agencies.',
     tags: ['SaaS', 'AI Agents', 'UX Research'],
-    image: 'nestaid.png',
+    image: 'nestaid.jpg',
     imageCacheBust: '2',
     accentColor: '#C1694F',
     href: '/work/nestaid',
@@ -90,7 +90,7 @@ export const caseStudies: CaseStudy[] = [
       'Boosted consistency in mental well-being practices by helping students build and sustain stress-management habits through a structured, low-friction experience.',
     tags: ['Mobile Design', 'Habit Design', 'Wellness'],
     metrics: ['88.9% task success rate', '6 usability test participants', '16-week project'],
-    image: 'constant.png',
+    image: 'constant.jpg',
     accentColor: '#9E4E38',
     href: '/work/constant',
   },
@@ -103,7 +103,7 @@ export const caseStudies: CaseStudy[] = [
       'Minimized support queries and increased user confidence by making product functionality instantly understandable through an interactive virtual clock within a streamlined e-commerce experience.',
     tags: ['Design Systems', 'Responsive Design', 'Web Design'],
     metrics: ['40% projected reduction in customer support calls', '6 usability tests conducted', '16-week end-to-end product design'],
-    image: 'sharp.png',
+    image: 'sharp.jpg',
     accentColor: '#C1694F',
     href: '/work/sharp',
   },
@@ -173,7 +173,7 @@ export const researchProjects: ResearchProject[] = [
     description:
       'Mixed-method UX research conducted for the Usher Project, examining how students at Thomas Jefferson University discover, access, and engage with library resources. The study identifies key friction points, usage gaps, and behavioral patterns to inform more accessible and student-centered library experiences.',
     tags: ['Mixed Methods', 'Behavioral Insights', 'Research Synthesis'],
-    image: 'research-library.png',
+    image: 'research-library.jpg',
     href: 'https://drive.google.com/file/d/1bXLizv_gp4I1xj57GtVQI7nkN1GxuRiX/view?usp=sharing',
   },
   {
@@ -182,7 +182,7 @@ export const researchProjects: ResearchProject[] = [
     description:
       'Collaborative research on how architecture students integrate AI tools into early-stage ideation. Synthesized insights from 12 students and 2 faculty to propose curriculum-level improvements for effective AI adoption.',
     tags: ['AI in Design', 'Opportunity Mapping', 'Stakeholder Alignment'],
-    image: 'research-ai-chatbots.png',
+    image: 'research-ai-chatbots.jpg',
     href: 'https://drive.google.com/file/d/1E8sz1nFck0HW3jt8b_Cy6ibEN63bOcD3/view?usp=sharing',
   },
 ]

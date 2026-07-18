@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight, ArrowLeft } from 'lucide-react'
 import CaseStudyHeader from '@/components/CaseStudyHeader'
 import Footer from '@/components/Footer'
@@ -502,9 +503,10 @@ export default function SharpCaseStudy() {
               The Existing User Manual
             </p>
             <div className="rounded-3xl overflow-hidden border border-border bg-surface">
-              <img
-                src="/images/sharp-manual.png"
+              <Image
+                src="/images/sharp-manual.jpg"
                 alt="Sharp existing user manual — text-heavy layout"
+                      fill
                 className="w-full h-auto object-cover object-top"
               />
             </div>
@@ -594,9 +596,10 @@ export default function SharpCaseStudy() {
             <FadeUp>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
                 <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
-                  <img
-                    src="/images/sharp-lofi.png"
+                  <Image
+                    src="/images/sharp-lofi.jpg"
                     alt="Sharp lo-fi wireframes"
+                      fill
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -614,9 +617,10 @@ export default function SharpCaseStudy() {
             <FadeUp delay={0.08}>
               <div className="bg-background rounded-2xl border border-border overflow-hidden">
                 <div className="aspect-[4/3] bg-surface flex items-center justify-center border-b border-border">
-                  <img
-                    src="/images/sharp-uikit.png"
+                  <Image
+                    src="/images/sharp-uikit.jpg"
                     alt="Sharp UI kit"
+                      fill
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -635,9 +639,10 @@ export default function SharpCaseStudy() {
           <FadeUp delay={0.1}>
             <div className="bg-background rounded-2xl border border-border overflow-hidden">
               <div className="aspect-[16/7] bg-surface flex items-center justify-center border-b border-border">
-                <img
-                  src="/images/sharp-hifi.png"
+                <Image
+                  src="/images/sharp-hifi.jpg"
                   alt="Sharp hi-fi wireframes"
+                      fill
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -699,9 +704,10 @@ export default function SharpCaseStudy() {
                           <p className="font-sans text-sm text-text-secondary leading-relaxed">{item.desc}</p>
                         </div>
                         <div className="aspect-[16/9] md:aspect-auto bg-background border-t md:border-t-0 md:border-l border-border overflow-hidden">
-                          <img
+                          <Image
                             src={item.image}
                             alt={item.title}
+                      fill
                             className="w-full h-full object-cover object-top"
                           />
                         </div>

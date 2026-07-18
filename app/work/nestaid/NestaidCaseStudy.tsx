@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, ArrowUpRight, Bot, TrendingUp, AlertTriangle, Lightbulb, RefreshCw } from 'lucide-react'
 import CaseStudyHeader from '@/components/CaseStudyHeader'
 import Footer from '@/components/Footer'
@@ -327,9 +328,10 @@ export default function NestaidCaseStudy() {
                   <span className="font-sans text-sm text-text-muted">B2C Marketplace</span>
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-border shadow-card aspect-[4/3] bg-background">
-                  <img
-                    src="/images/nestaid-before.png"
+                  <Image
+                    src="/images/nestaid-before.jpg"
                     alt="NestAid original B2C website"
+                      fill
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -349,9 +351,10 @@ export default function NestaidCaseStudy() {
                   <span className="font-sans text-sm text-text-muted">B2B SaaS Platform</span>
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-primary/20 shadow-card aspect-[4/3] bg-background">
-                  <img
-                    src="/images/nestaid-after.png"
+                  <Image
+                    src="/images/nestaid-after.jpg"
                     alt="NestAid new B2B platform"
+                      fill
                     className="w-full h-full object-cover object-top"
                   />
                 </div>

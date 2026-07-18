@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowDown, Sparkles } from 'lucide-react'
+import Image from 'next/image'
 import { siteConfig } from '@/lib/data'
 
 export default function Hero() {
@@ -112,10 +113,12 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full bg-primary/8 scale-110" />
               {/* Circle photo */}
               <div className="w-[320px] h-[320px] rounded-full overflow-hidden border-2 border-primary/15 shadow-lg relative z-10">
-                <img
+                <Image
                   src="/images/sweta-cutout.png"
                   alt={siteConfig.fullName}
-                  className="w-full h-full object-cover object-top scale-125 translate-y-4"
+                  fill
+                  className="object-cover object-top scale-125 translate-y-4"
+                  priority
                 />
               </div>
               {/* Small accent dot */}

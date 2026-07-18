@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -144,13 +145,14 @@ export default function PlaygroundPage() {
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
+          {/* Top row: Bloom (wide) + Locket */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5 mb-4 md:mb-5">
 
             {/* Bloom — wide card */}
             <FadeIn delay={0} className="md:col-span-7 flex flex-col">
-              <Link href="/playground/bloom" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500">
+              <Link href="/playground/bloom" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
                 <div className="relative overflow-hidden min-h-[340px]">
-                  <img src="/images/bloom-preview.jpg" alt="Bloom app" className="w-full h-full absolute inset-0 object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <Image src="/images/bloom-preview.jpg" alt="Bloom app" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <div className="flex items-center justify-between px-5 py-4">
                   <div>
@@ -164,46 +166,65 @@ export default function PlaygroundPage() {
               </Link>
             </FadeIn>
 
-            {/* Right column — Air Draw + Void Runner */}
-            <div className="md:col-span-5 flex flex-col gap-4 md:gap-5">
+            {/* Locket */}
+            <FadeIn delay={0.12} className="md:col-span-5 flex flex-col">
+              <Link href="/playground/locket" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
+                <div className="relative overflow-hidden min-h-[340px]">
+                  <Image src="/images/locket-preview.jpg" alt="Locket app" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <div className="flex items-center justify-between px-5 py-4">
+                  <div>
+                    <p className="font-sans text-xs text-text-muted mb-0.5">Location Memory · Diaspora · Figma</p>
+                    <h3 className="font-display text-xl text-text">Locket</h3>
+                  </div>
+                  <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <ArrowUpRight size={14} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
+                  </div>
+                </div>
+              </Link>
+            </FadeIn>
 
-              {/* Air Draw */}
-              <FadeIn delay={0.12} className="flex-1">
-                <Link href="/playground/air-draw" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
-                  <div className="relative overflow-hidden min-h-[160px]">
-                    <img src="/images/air-draw-preview.jpg" alt="Air Draw experiment" className="w-full h-full absolute inset-0 object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  </div>
-                  <div className="flex items-center justify-between px-4 py-3">
-                    <div>
-                      <p className="font-sans text-xs text-text-muted mb-0.5">Computer Vision · Gesture UI</p>
-                      <h3 className="font-display text-lg text-text">Air Draw</h3>
-                    </div>
-                    <div className="w-7 h-7 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                      <ArrowUpRight size={13} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
-                    </div>
-                  </div>
-                </Link>
-              </FadeIn>
+          </div>
 
-              {/* Void Runner */}
-              <FadeIn delay={0.22} className="flex-1">
-                <a href="https://sweta-dino-game.vercel.app" target="_blank" rel="noopener noreferrer" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
-                  <div className="relative overflow-hidden min-h-[160px]">
-                    <img src="/images/dino-preview.jpg" alt="Void Runner experiment" className="w-full h-full absolute inset-0 object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  </div>
-                  <div className="flex items-center justify-between px-4 py-3">
-                    <div>
-                      <p className="font-sans text-xs text-text-muted mb-0.5">Browser Game · Vibe Coded</p>
-                      <h3 className="font-display text-lg text-text">Void Runner</h3>
-                    </div>
-                    <div className="w-7 h-7 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                      <ArrowUpRight size={13} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
-                    </div>
-                  </div>
-                </a>
-              </FadeIn>
+          {/* Bottom row: Air Draw + Void Runner */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
 
-            </div>
+            {/* Air Draw */}
+            <FadeIn delay={0.22}>
+              <Link href="/playground/air-draw" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
+                <div className="relative overflow-hidden min-h-[200px]">
+                  <Image src="/images/air-draw-preview.jpg" alt="Air Draw experiment" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <div className="flex items-center justify-between px-4 py-3">
+                  <div>
+                    <p className="font-sans text-xs text-text-muted mb-0.5">Computer Vision · Gesture UI</p>
+                    <h3 className="font-display text-lg text-text">Air Draw</h3>
+                  </div>
+                  <div className="w-7 h-7 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <ArrowUpRight size={13} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
+                  </div>
+                </div>
+              </Link>
+            </FadeIn>
+
+            {/* Void Runner */}
+            <FadeIn delay={0.30}>
+              <a href="https://sweta-dino-game.vercel.app" target="_blank" rel="noopener noreferrer" className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
+                <div className="relative overflow-hidden min-h-[200px]">
+                  <Image src="/images/dino-preview.jpg" alt="Void Runner experiment" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <div className="flex items-center justify-between px-4 py-3">
+                  <div>
+                    <p className="font-sans text-xs text-text-muted mb-0.5">Browser Game · Vibe Coded</p>
+                    <h3 className="font-display text-lg text-text">Void Runner</h3>
+                  </div>
+                  <div className="w-7 h-7 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <ArrowUpRight size={13} className="text-text-secondary group-hover:text-white transition-colors duration-300" />
+                  </div>
+                </div>
+              </a>
+            </FadeIn>
+
           </div>
         </div>
       </section>
@@ -228,7 +249,7 @@ export default function PlaygroundPage() {
             <FadeIn delay={0} className="md:col-span-7 flex flex-col">
               <a href={spacesProjects[0].href} className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500">
                 <div className="relative overflow-hidden min-h-[340px]">
-                  <img src={spacesProjects[0].image} alt={spacesProjects[0].title} className="w-full h-full absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <Image src={spacesProjects[0].image} alt={spacesProjects[0].title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <div className="flex items-center justify-between px-5 py-4">
                   <div>
@@ -247,7 +268,7 @@ export default function PlaygroundPage() {
                 <FadeIn key={project.title} delay={(i + 1) * 0.12} className="flex-1">
                   <a href={project.href} className="group block rounded-3xl overflow-hidden bg-surface shadow-card border border-border hover:shadow-card-hover transition-all duration-500 h-full">
                     <div className="relative overflow-hidden min-h-[160px]">
-                      <img src={project.image} alt={project.title} className="w-full h-full absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                      <Image src={project.image} alt={project.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                     </div>
                     <div className="flex items-center justify-between px-4 py-3">
                       <div>

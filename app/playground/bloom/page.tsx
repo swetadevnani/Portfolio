@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -97,10 +98,10 @@ export default function BloomPage() {
           {/* Full-width image */}
           <FadeIn delay={0.15}>
             <div className="rounded-3xl overflow-hidden bg-surface border border-border shadow-card w-full">
-              <img
+              <Image
                 src="/images/bloom-preview.jpg"
                 alt="Bloom app screens"
-                className="w-full h-auto block"
+                width={1200} height={800} className="w-full h-auto block"
                 onError={(e) => {
                   const el = e.target as HTMLImageElement
                   el.style.display = 'none'
