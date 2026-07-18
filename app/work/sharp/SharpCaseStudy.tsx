@@ -678,19 +678,19 @@ export default function SharpCaseStudy() {
                     number: '01',
                     title: 'Virtual Interactive Clock',
                     desc: 'A digital replica of the physical product. Users click any button and immediately see what it does, in real time. All buttons on the product are supported.',
-                    image: '/images/sharp-feature-1.png',
+                    image: '/images/sharp-feature-1.jpg',
                   },
                   {
                     number: '02',
                     title: 'Curated Video Support with Timestamps',
                     desc: 'Access to YouTube tutorials directly within the page. Key moments are highlighted at the bottom so users can jump straight to the answer for their specific question — no scrubbing required.',
-                    image: '/images/sharp-feature-2.png',
+                    image: '/images/sharp-feature-2.jpg',
                   },
                   {
                     number: '03',
                     title: 'Contextual FAQs',
                     desc: 'Frequently asked questions are surfaced directly alongside the virtual clock, answering the most common queries without requiring a support call.',
-                    image: '/images/sharp-feature-3.png',
+                    image: '/images/sharp-feature-3.jpg',
                   },
                 ].map((item, i) => (
                   <FadeUp key={item.number} delay={i * 0.07}>
@@ -703,12 +703,12 @@ export default function SharpCaseStudy() {
                           <h4 className="font-display text-xl text-text leading-snug mb-3">{item.title}</h4>
                           <p className="font-sans text-sm text-text-secondary leading-relaxed">{item.desc}</p>
                         </div>
-                        <div className="aspect-[16/9] md:aspect-auto bg-background border-t md:border-t-0 md:border-l border-border overflow-hidden">
+                        <div className="relative aspect-[16/9] md:min-h-[280px] bg-background border-t md:border-t-0 md:border-l border-border overflow-hidden">
                           <Image
                             src={item.image}
                             alt={item.title}
-                      fill
-                            className="w-full h-full object-cover object-top"
+                            fill
+                            className="object-cover object-top"
                           />
                         </div>
                       </div>
