@@ -25,7 +25,7 @@ export const aboutContent = {
   headline: 'I move fast without cutting corners.',
   bio: [
     "My background in architecture taught me to think about how people move through complex systems, where friction appears, and how individual decisions affect the whole experience. Today I apply that same lens to digital products, combining research, interaction design and rapid prototyping to make complicated workflows feel clear.",
-    "My workflow is AI-native by design, not because it's trendy, but because it closes the gap between insight and execution. I use Claude and Cursor to compress discovery timelines, Figma Make to prototype faster, and stay in lockstep with engineers so nothing gets lost in handoffs.",
+    "I use Claude, Cursor, and rapid prototypes when they help me test ideas faster and stay closer to implementation, so important design decisions don't disappear during handoff.",
     "Outside work, I cycle, read obsessively, and occasionally build small tools with AI just to understand what I'm designing for.",
   ],
   highlights: [
@@ -61,7 +61,7 @@ export const caseStudies: CaseStudy[] = [
     context: 'Thesis Capstone Project',
     role: 'UX Designer & Researcher',
     description:
-      'Led UX research and design of an AI-powered academic resource app integrating Canvas and library systems. Validated through 12 interviews and 3 pretotyping experiments.',
+      'Designed a course-connected academic resource discovery experience after research revealed that students struggled to find relevant library resources for their coursework.',
     tags: ['AI/ML', 'User Research', 'Mobile Design'],
     metrics: ['92% task success rate', '75% user preference over Google', '12 user interviews'],
     image: 'usher.jpg',
@@ -74,7 +74,7 @@ export const caseStudies: CaseStudy[] = [
     context: 'SaaS · AI Agents · Product Design',
     role: 'Product Designer',
     description:
-      'Conducted secondary research that pivoted NestAid from a B2C caregiving marketplace to a B2B AI operations platform — powered by Nessa, an AI agent that automates scheduling and workforce management for caregiving agencies.',
+      'Designed a multi-role scheduling experience for caregiving agencies, turning fragmented shift coordination into clear workflows for admins, care workers, and coordinators.',
     tags: ['SaaS', 'AI Agents', 'UX Research'],
     image: 'nestaid.jpg',
     imageCacheBust: '2',
@@ -116,15 +116,15 @@ export type SkillCategory = {
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'Understanding the problem',
-    skills: ['User interviews', 'Behavioral analytics', 'Usability testing', 'Competitive research', 'Information architecture'],
+    name: 'Research & Understand',
+    skills: ['User interviews', 'Behavioral analytics', 'Usability testing', 'Competitive research', 'Information architecture', 'Visual Design'],
   },
   {
     name: 'Designing the experience',
     skills: ['User flows', 'Interaction design', 'Responsive UI', 'Prototyping', 'Design systems', 'Accessibility'],
   },
   {
-    name: 'Make it real',
+    name: 'Design to delivery',
     skills: ['Developer handoff', 'Design QA', 'Figma', 'Framer', 'HTML/CSS', 'Claude + Cursor'],
   },
 ]

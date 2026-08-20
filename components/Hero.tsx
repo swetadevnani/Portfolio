@@ -34,7 +34,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-surface border border-border rounded-full px-4 py-1.5 mb-6 w-fit"
             >
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="font-sans text-sm text-text-secondary">Open to opportunities</span>
+              <span className="font-sans text-sm text-text-secondary">Open to Product Design &amp; UX roles</span>
             </motion.div>
 
             {/* Greeting */}
@@ -67,7 +67,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
               className="font-sans text-lg text-text-secondary leading-relaxed mb-10 max-w-xl"
             >
-              I design across B2B SaaS, web and mobile, combining user research, interaction design, visual craft and rapid prototyping to move from ambiguity to tested, implementation-ready experiences.
+              I design across web, mobile, and B2B products, combining user research, interaction design, visual craft, and rapid prototyping to turn ambiguity into tested, buildable experiences.
             </motion.p>
 
             {/* CTA */}

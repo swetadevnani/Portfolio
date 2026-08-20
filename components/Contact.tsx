@@ -52,6 +52,7 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={copyEmail}
+                aria-label={copied ? 'Email copied' : `Copy email ${siteConfig.email}`}
                 className="group mx-auto mb-8 inline-flex max-w-full flex-row items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 font-sans text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-card-hover"
               >
                 {copied ? (
@@ -59,7 +60,23 @@ export default function Contact() {
                 ) : (
                   <Copy className="h-5 w-5 shrink-0" aria-hidden />
                 )}
-                {copied ? 'Copied!' : 'Let\'s Connect'}
+                <span className="inline-grid place-items-center [&>span]:col-start-1 [&>span]:row-start-1">
+                  <span className="invisible" aria-hidden="true">
+                    {siteConfig.email}
+                  </span>
+                  {copied ? (
+                    <span>Copied!</span>
+                  ) : (
+                    <>
+                      <span className="transition-opacity group-hover:opacity-0">
+                        {siteConfig.email}
+                      </span>
+                      <span className="opacity-0 transition-opacity group-hover:opacity-100">
+                        Copy Email
+                      </span>
+                    </>
+                  )}
+                </span>
               </button>
 
               {/* Secondary links */}
