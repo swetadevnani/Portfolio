@@ -10,8 +10,8 @@ export const siteConfig = {
   email: 'swetaux@gmail.com',
   location: 'Philadelphia, PA',
   availableForWork: true,
-  resumeUrl: 'https://drive.google.com/file/d/1jHAKqlkD01ATLkCpeoO21z5SEYfC-8pA/view?usp=sharing',
-  resumeViewUrl: 'https://drive.google.com/file/d/1jHAKqlkD01ATLkCpeoO21z5SEYfC-8pA/view?usp=sharing',
+  resumeUrl: 'https://drive.google.com/file/d/1O_6MPlcc__YNSNWAqNo28qwqGbDPAVjX/view?usp=sharing',
+  resumeViewUrl: 'https://drive.google.com/file/d/1O_6MPlcc__YNSNWAqNo28qwqGbDPAVjX/view?usp=sharing',
   // Usher mockup video: too large for GitHub when self-hosted. Set to a YouTube/Vimeo embed URL to show on live site, or leave '' to use local /images/usher-mockup.mp4 (only works after compress + remove from .gitignore).
   usherMockupVideoUrl: 'https://www.youtube.com/embed/PzlW5SrnGI8',
   social: {
@@ -165,5 +165,5 @@ export const navLinks = [
   { label: 'About', href: '/about' },
   { label: 'Playground', href: '/playground' },
   { label: 'Contact', href: '#contact' },
-  { label: 'Resume', href: 'https://drive.google.com/file/d/1jHAKqlkD01ATLkCpeoO21z5SEYfC-8pA/view?usp=sharing', external: true },
+  { label: 'Resume', href: 'https://drive.google.com/file/d/1O_6MPlcc__YNSNWAqNo28qwqGbDPAVjX/view?usp=sharing', external: true },
 ]
