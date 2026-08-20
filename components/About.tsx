@@ -14,7 +14,7 @@ export default function About() {
           <div>
             <h2 className="section-title mb-8">{aboutContent.headline}</h2>
             <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
-              I&apos;m a product designer who specializes in <strong className="font-semibold text-text">SaaS</strong> — specifically the hard part: taking a vague problem, a demanding user, and a tight timeline, and turning all three into a <strong className="font-semibold text-text">shipped product</strong>. I come from a research background, which means I don&apos;t start with screens; I start with questions.
+              My background in architecture taught me to think about how people move through complex systems, where friction appears, and how individual decisions affect the whole experience. Today I apply that same lens to digital products, combining research, interaction design and rapid prototyping to make complicated workflows feel clear.
             </p>
             <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
               My workflow is <strong className="font-semibold text-text">AI-native by design</strong> — not because it&apos;s trendy, but because it closes the gap between insight and execution. I use Claude and Cursor to compress discovery timelines, Figma Make to prototype faster, and stay in lockstep with engineers so <strong className="font-semibold text-text">nothing gets lost in handoffs</strong>.
@@ -31,12 +31,14 @@ export default function About() {
             </Link>
           </div>
           {/* Right: presenting photo */}
-          <div className="relative rounded-2xl overflow-hidden shadow-card aspect-[4/3]">
+          <div className="relative rounded-2xl overflow-hidden shadow-card aspect-[4/5]">
             <Image
               src="/images/sweta-presenting.jpg"
               alt="Sweta presenting at a design event"
               fill
-              className="object-cover object-center"
+              sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
+              quality={90}
+              className="object-cover object-[50%_38%]"
             />
           </div>
         </div>

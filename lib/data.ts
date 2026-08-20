@@ -6,7 +6,7 @@ export const siteConfig = {
   name: 'Sweta',
   fullName: 'Sweta Devnani',
   role: 'Product Designer',
-  tagline: 'From research to execution, I turn ideas into thoughtful experiences across SaaS, web, and mobile.',
+  tagline: 'I turn complex workflows into clear, usable products.',
   email: 'swetaux@gmail.com',
   location: 'Philadelphia, PA',
   availableForWork: true,
@@ -24,7 +24,7 @@ export const siteConfig = {
 export const aboutContent = {
   headline: 'I move fast without cutting corners.',
   bio: [
-    "I'm a product designer who specializes in SaaS, specifically the hard part: taking a vague problem, a demanding user, and a tight timeline, and turning all three into a shipped product. I come from a research background, which means I don't start with screens; I start with questions.",
+    "My background in architecture taught me to think about how people move through complex systems, where friction appears, and how individual decisions affect the whole experience. Today I apply that same lens to digital products, combining research, interaction design and rapid prototyping to make complicated workflows feel clear.",
     "My workflow is AI-native by design, not because it's trendy, but because it closes the gap between insight and execution. I use Claude and Cursor to compress discovery timelines, Figma Make to prototype faster, and stay in lockstep with engineers so nothing gets lost in handoffs.",
     "Outside work, I cycle, read obsessively, and occasionally build small tools with AI just to understand what I'm designing for.",
   ],
@@ -116,43 +116,16 @@ export type SkillCategory = {
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'Design Tools',
-    skills: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Zeplin'],
+    name: 'Understanding the problem',
+    skills: ['User interviews', 'Behavioral analytics', 'Usability testing', 'Competitive research', 'Information architecture'],
   },
   {
-    name: 'Prototyping',
-    skills: ['Figma Prototyping', 'ProtoPie', 'Framer', 'Lottie'],
+    name: 'Designing the experience',
+    skills: ['User flows', 'Interaction design', 'Responsive UI', 'Prototyping', 'Design systems', 'Accessibility'],
   },
   {
-    name: 'Research & Testing',
-    skills: ['User Interviews', 'Usability Testing', 'A/B Testing', 'Maze', 'Hotjar', 'Lookback'],
-  },
-  {
-    name: 'Collaboration',
-    skills: ['FigJam', 'Miro', 'Notion', 'Confluence', 'Jira', 'Slack'],
-  },
-  {
-    name: 'Methods',
-    skills: [
-      'Design Sprints',
-      'Journey Mapping',
-      'Information Architecture',
-      'Card Sorting',
-      'Interaction Design',
-      'Visual Communication',
-    ],
-  },
-  {
-    name: 'AI & Development',
-    skills: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'React (Basics)',
-      'Claude',
-      'Cursor',
-      'Figma Make',
-    ],
+    name: 'Make it real',
+    skills: ['Developer handoff', 'Design QA', 'Figma', 'Framer', 'HTML/CSS', 'Claude + Cursor'],
   },
 ]
 

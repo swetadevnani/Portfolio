@@ -14,8 +14,7 @@ export default function CaseStudies() {
             <p className="section-label">Selected Work</p>
             <h2 className="section-title mb-4">Projects I&apos;m proud of</h2>
             <p className="section-subtitle">
-              A handful of projects where I got to untangle hard problems and
-              ship solutions that actually made a difference.
+              A few projects showing how I research, simplify, design and validate across different product contexts.
             </p>
           </div>
         </div>

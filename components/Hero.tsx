@@ -56,8 +56,8 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               className="font-display text-[44px] md:text-[56px] lg:text-[60px] text-text leading-[1.15] mb-6"
             >
-              The product designer<br />
-              for the AI era.
+              I turn complex workflows into<br />
+              clear, usable products.
             </motion.h1>
 
             {/* Subtitle */}
@@ -67,7 +67,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
               className="font-sans text-lg text-text-secondary leading-relaxed mb-10 max-w-xl"
             >
-              I specialize in SaaS, from early research through shipped UI. I use AI tools natively across the full design process: faster discovery, tighter iteration, better outcomes.
+              I design across B2B SaaS, web and mobile, combining user research, interaction design, visual craft and rapid prototyping to move from ambiguity to tested, implementation-ready experiences.
             </motion.p>
 
             {/* CTA */}
@@ -114,10 +114,10 @@ export default function Hero() {
               {/* Circle photo */}
               <div className="w-[320px] h-[320px] rounded-full overflow-hidden border-2 border-primary/15 shadow-lg relative z-10">
                 <Image
-                  src="/images/sweta-cutout.png"
+                  src="/images/Sweta.jpg"
                   alt={siteConfig.fullName}
                   fill
-                  className="object-cover object-top scale-125 translate-y-4"
+                  className="object-cover object-[66%_36%] scale-[1.32]"
                   priority
                 />
               </div>

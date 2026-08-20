@@ -98,7 +98,7 @@ export default function Footer() {
         {/* Bottom note */}
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="font-sans text-xs text-text-muted">
-            Designed with intent. Vibe coded with Claude + Cursor.
+            Designed and built by Sweta · Figma + Claude + Cursor
           </p>
         </div>
       </div>

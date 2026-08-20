@@ -1,9 +1,22 @@
 'use client'
 
-import { Mail, Download, CalendarDays } from 'lucide-react'
+import { useState } from 'react'
+import { Linkedin, Download, Copy, Check } from 'lucide-react'
 import { siteConfig } from '@/lib/data'
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false)
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(siteConfig.email)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 2000)
+    } catch {
+      window.prompt('Copy my email:', siteConfig.email)
+    }
+  }
+
   return (
     <section id="contact" className="section-padding bg-background overflow-hidden">
       <div className="container-inner">
@@ -33,29 +46,32 @@ export default function Contact() {
                 Let&apos;s make something <span className="text-primary">great</span> together
               </h2>
               <p className="font-sans text-lg text-text-secondary leading-relaxed mb-10">
-                Whether you&apos;re building something new, improving what you have, or just want
-                to swap ideas over coffee — I&apos;d love to hear from you. I&apos;m always open to
-                the right collaboration.
+                I&apos;m currently open to Product Design and UX opportunities and open to relocation across the U.S.
               </p>
-              {/* Primary CTA — Calendly */}
-              <a
-                href="https://calendly.com/devnanishwetaa/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Primary CTA — Copy email */}
+              <button
+                type="button"
+                onClick={copyEmail}
                 className="group mx-auto mb-8 inline-flex max-w-full flex-row items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 font-sans text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-card-hover"
               >
-                <CalendarDays className="h-5 w-5 shrink-0" aria-hidden />
-                Book a 30-min call
-              </a>
+                {copied ? (
+                  <Check className="h-5 w-5 shrink-0" aria-hidden />
+                ) : (
+                  <Copy className="h-5 w-5 shrink-0" aria-hidden />
+                )}
+                {copied ? 'Copied!' : 'Let\'s Connect'}
+              </button>
 
               {/* Secondary links */}
               <div className="flex items-center justify-center gap-6 mb-12">
                 <a
-                  href={`mailto:${siteConfig.email}`}
+                  href={siteConfig.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 font-sans text-sm text-text-secondary hover:text-primary transition-colors"
                 >
-                  <Mail size={14} />
-                  {siteConfig.email}
+                  <Linkedin size={14} />
+                  LinkedIn
                 </a>
                 <span className="text-border">·</span>
                 <a
