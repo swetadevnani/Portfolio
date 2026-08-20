@@ -114,7 +114,7 @@ export default function Hero() {
               {/* Circle photo */}
               <div className="w-[320px] h-[320px] rounded-full overflow-hidden border-2 border-primary/15 shadow-lg relative z-10">
                 <Image
-                  src="/images/Sweta.jpg"
+                  src="/images/sweta.jpg"
                   alt={siteConfig.fullName}
                   fill
                   className="object-cover object-[66%_36%] scale-[1.32]"
