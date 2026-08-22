@@ -267,8 +267,8 @@ export default function UsherCaseStudy() {
                 <p className="font-sans text-sm text-text">8 Months</p>
               </div>
               <div>
-                <p className="font-sans text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">Type</p>
-                <p className="font-sans text-sm text-text">Thesis Capstone</p>
+                <p className="font-sans text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">Team</p>
+                <p className="font-sans text-sm text-text">Independent thesis project</p>
               </div>
               <div>
                 <p className="font-sans text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">Tools</p>
