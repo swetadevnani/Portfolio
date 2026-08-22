@@ -251,7 +251,7 @@ export default function UsherCaseStudy() {
           {/* Subtitle */}
           <FadeUp delay={0.15}>
             <p className="font-sans text-xl text-text-secondary leading-relaxed mb-12 max-w-2xl">
-              Bridging the gap between Canvas coursework and university library resources — so students stop Googling and start discovering.
+              An 8-month master&apos;s thesis exploring why students underuse credible academic resources and how course-aware personalization could reduce the friction of discovery.
             </p>
           </FadeUp>
 
