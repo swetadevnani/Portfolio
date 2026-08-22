@@ -260,7 +260,7 @@ export default function UsherCaseStudy() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 border-b border-border">
               <div>
                 <p className="font-sans text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">Role</p>
-                <p className="font-sans text-sm text-text">End-to-end UX Design</p>
+                <p className="font-sans text-sm text-text">UX Researcher &amp; Product Designer</p>
               </div>
               <div>
                 <p className="font-sans text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">Timeline</p>
