@@ -297,20 +297,39 @@ export default function UsherCaseStudy() {
         </div>
       </FadeUp>
 
-      {/* ── Overview ── */}
+      {/* ── Problem ── */}
       <section className="section-padding">
         <div className="container-inner space-y-16">
-          <SectionRow label="Overview">
+          <SectionRow label="Problem">
             <div className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl text-text leading-snug mb-6">
-                Universities invest millions in academic resources. Students still Google everything.
-              </h2>
               <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
-                Despite world-class library databases and curated academic collections, students consistently default to Reddit, Google, and unreliable online sources for homework help. This isn&apos;t a laziness problem — it&apos;s a{' '}
-                <strong className="text-text font-semibold">discovery and navigation problem</strong>.
+                University libraries already provide students with credible academic content, but access alone does not make those resources easy to use.
               </p>
-              <p className="font-sans text-base text-text-secondary leading-relaxed">
-                The current system requires students to leave their existing workflow, navigate complex search interfaces, evaluate unfamiliar databases, and decode academic jargon — all before finding a single relevant resource. Usher was designed to eliminate that entire journey.
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+                Early research showed a gap between what universities offered and how students actually behaved. Students regularly turned to Google Scholar and other external tools because they felt faster, more familiar, and easier to navigate.
+              </p>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-12">
+                Even among students who described themselves as library users, interviews revealed that many primarily used the library for studying, printing, IT support, or other non-research activities.
+              </p>
+
+              {/* Stat strip */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  { value: '23 / 27', label: 'reported difficulty finding relevant library resources' },
+                  { value: '27 / 27', label: 'used Google Scholar or other external platforms for research' },
+                  { value: '2 / 12', label: 'interview participants consistently used academic library resources' },
+                ].map((s, i) => (
+                  <FadeUp key={i} delay={i * 0.08}>
+                    <div className="bg-surface rounded-2xl border border-border p-6">
+                      <p className="font-display text-3xl text-primary mb-2">{s.value}</p>
+                      <p className="font-sans text-sm text-text-secondary leading-relaxed">{s.label}</p>
+                    </div>
+                  </FadeUp>
+                ))}
+              </div>
+
+              <p className="font-sans text-sm text-text-muted leading-relaxed mt-6 italic">
+                The thesis&apos;s recruitment survey showed 23/27 struggling to find relevant resources and all 27 using external research platforms; deeper interviews then found only two of twelve consistently used academic research materials.
               </p>
             </div>
           </SectionRow>
