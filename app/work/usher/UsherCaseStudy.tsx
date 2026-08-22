@@ -104,73 +104,6 @@ function StatCard({
   )
 }
 
-// ─── Pull quote ─────────────────────────────────────────────────────────────
-function PullQuote({
-  quote,
-  participant,
-  delay = 0,
-}: {
-  quote: string
-  participant: string
-  delay?: number
-}) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-40px' })
-  return (
-    <motion.blockquote
-      ref={ref}
-      initial={{ opacity: 1, x: 0 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.55, delay, ease: [0.25, 0.4, 0.25, 1] }}
-      className="border-l-2 border-primary/40 pl-6 py-2"
-    >
-      <p className="font-sans text-base text-text-secondary leading-relaxed italic mb-3">
-        &ldquo;{quote}&rdquo;
-      </p>
-      <cite className="font-sans text-xs font-semibold text-primary uppercase tracking-wider not-italic">
-        {participant}
-      </cite>
-    </motion.blockquote>
-  )
-}
-
-// ─── Insight card ───────────────────────────────────────────────────────────
-function InsightCard({
-  number,
-  title,
-  body,
-  delay = 0,
-}: {
-  number: string
-  title: string
-  body: string
-  delay?: number
-}) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-40px' })
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 1, y: 0 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, delay, ease: [0.25, 0.4, 0.25, 1] }}
-      className="bg-background rounded-2xl p-8 border border-border relative overflow-hidden"
-    >
-      <div
-        aria-hidden="true"
-        className="absolute top-0 right-0 font-display text-8xl text-primary/5 leading-none select-none pr-4 pt-2"
-      >
-        {number}
-      </div>
-      <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary font-sans font-bold text-sm mb-5">
-        {number}
-      </div>
-      <h4 className="font-display text-xl text-text mb-3 leading-snug">{title}</h4>
-      <p className="font-sans text-sm text-text-secondary leading-relaxed">{body}</p>
-    </motion.div>
-  )
-}
-
 // ─── Design decision card ────────────────────────────────────────────────────
 function DecisionCard({
   number,
@@ -313,14 +246,14 @@ export default function UsherCaseStudy() {
               </p>
 
               {/* Stat strip */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
                 {[
                   { value: '23 / 27', label: 'reported difficulty finding relevant library resources' },
                   { value: '27 / 27', label: 'used Google Scholar or other external platforms for research' },
                   { value: '2 / 12', label: 'interview participants consistently used academic library resources' },
                 ].map((s, i) => (
-                  <FadeUp key={i} delay={i * 0.08}>
-                    <div className="bg-surface rounded-2xl border border-border p-6">
+                  <FadeUp key={i} delay={i * 0.08} className="h-full">
+                    <div className="bg-surface rounded-2xl border border-border p-6 h-full">
                       <p className="font-display text-3xl text-primary mb-2">{s.value}</p>
                       <p className="font-sans text-sm text-text-secondary leading-relaxed">{s.label}</p>
                     </div>
@@ -481,78 +414,174 @@ export default function UsherCaseStudy() {
         </div>
       </section>
 
-      {/* ── Research Approach ── */}
+      {/* ── Primary Research ── */}
       <section className="bg-surface py-20 px-6 md:px-8 lg:px-12">
-        <div className="container-inner space-y-12">
-          <SectionRow label="Research Approach">
-            <div className="max-w-3xl">
-              <h2 className="font-display text-3xl text-text leading-snug mb-6">
-                12 students, 8 departments, and one library director
-              </h2>
-              <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
-                To move beyond assumptions, I conducted in-depth interviews with{' '}
-                <strong className="text-text font-semibold">12 students across different departments</strong> — from Architecture to Medical to UX Design. These conversations revealed not just what students <em>do</em>, but why they avoid library resources despite needing them.
-              </p>
-              <p className="font-sans text-base text-text-secondary leading-relaxed mb-8">
-                I then shared synthesized findings with the <strong className="text-text font-semibold">Director of the University Library</strong>. This institutional perspective revealed operational constraints I needed to design around — limited IT resources for complex integrations and content licensing restrictions. Together, these dual perspectives formed the foundation for every design decision that followed.
-              </p>
-
-              {/* Research method tags */}
-              <div className="flex flex-wrap gap-2">
-                {['In-depth Interviews', 'Affinity Mapping', 'Secondary Research', 'Institutional Stakeholder Interview', 'Usability Testing (6 students)', '3 Pretotyping Experiments'].map((tag) => (
-                  <span key={tag} className="tag-pill">{tag}</span>
-                ))}
-              </div>
-            </div>
-          </SectionRow>
-        </div>
-      </section>
-
-      {/* ── Key Insights ── */}
-      <section className="section-padding">
         <div className="container-inner">
           <FadeUp className="mb-12">
-            <p className="section-label mb-2">Key Insights</p>
+            <p className="section-label mb-3">Primary Research</p>
             <h2 className="font-display text-3xl md:text-4xl text-text leading-snug max-w-2xl">
-              What the research actually revealed
+              I started broad, then looked for the gap between what students said and what they actually did.
             </h2>
           </FadeUp>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <InsightCard
-              number="01"
-              title="Students use the library for everything except research"
-              body="Only 2 out of 12 students actively used library literature resources for academic research — the core function libraries are designed for. Both belonged to the Medical program. The majority came for printing, group study, or IT support."
-              delay={0}
-            />
-            <InsightCard
-              number="02"
-              title="Navigation was the real barrier — not awareness"
-              body="After mapping student challenges, navigation emerged as the underlying factor — outweighing awareness gaps. Difficulty finding relevant resources and unclear search paths created friction that discouraged continued use. This reframed the entire design challenge."
-              delay={0.1}
-            />
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 items-start">
 
-          {/* Student voices */}
-          <FadeUp className="mb-6">
-            <p className="section-label mb-6">Student Voices</p>
+            {/* Left: copy */}
+            <FadeUp delay={0.05}>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+                I conducted structured interviews with 12 students across six disciplines, focusing on four questions:
+              </p>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+                How are students currently using library resources? Where does the experience break down? What tools do they use instead? And what would make credible academic resources easier to incorporate into their existing workflow?
+              </p>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+                The interviews were organized around awareness, current usage, barriers, and opportunities. I documented each session immediately afterward so that explicit comments, hesitation, workarounds, and behavioral patterns could be compared consistently during synthesis.
+              </p>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-8">
+                One pattern appeared early: <strong className="text-text font-semibold">&ldquo;using the library&rdquo; did not always mean using library resources.</strong>
+              </p>
+            </FadeUp>
+
+            {/* Right: participant distribution + quote */}
+            <FadeUp delay={0.1}>
+              <div className="bg-background rounded-3xl border border-border p-6">
+                <p className="font-sans text-xs font-semibold text-text-muted uppercase tracking-wider mb-5">Participant Distribution</p>
+
+                {/* Discipline groups */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {[
+                    { label: 'Architecture', ids: ['P-2'], color: 'bg-primary/10 text-primary' },
+                    { label: 'Medical', ids: ['P-3', 'P-10'], color: 'bg-rose-100 text-rose-700' },
+                    { label: 'UX Design', ids: ['P-4', 'P-5'], color: 'bg-violet-100 text-violet-700' },
+                    { label: 'Industrial Design', ids: ['P-11', 'P-12'], color: 'bg-amber-100 text-amber-700' },
+                    { label: 'Textile Design', ids: ['P-1', 'P-6'], color: 'bg-teal-100 text-teal-700' },
+                    { label: 'Construction Mgmt', ids: ['P-7', 'P-8', 'P-9'], color: 'bg-sky-100 text-sky-700' },
+                  ].map((group) => (
+                    <div key={group.label} className="bg-surface rounded-xl p-3 border border-border">
+                      <p className="font-sans text-[10px] text-text-muted mb-2">{group.label}</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {group.ids.map((id) => (
+                          <span key={id} className={`inline-flex items-center justify-center rounded-full px-2 py-0.5 font-sans text-[11px] font-semibold ${group.color}`}>
+                            {id}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Quote card */}
+                <div className="bg-surface rounded-2xl border border-border p-5">
+                  <p className="font-sans text-sm text-text leading-relaxed mb-3">
+                    &ldquo;Even the website… it&apos;s kind of tricky. We are not able to easily find where the things are.&rdquo;
+                  </p>
+                  <p className="font-sans text-xs text-text-muted italic">
+                    Interview feedback consistently pointed toward effort, navigation and relevance.
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Synthesis / The Reframe ── */}
+      <section className="section-padding">
+        <div className="container-inner">
+          <FadeUp className="mb-12">
+            <p className="section-label mb-2">Synthesis</p>
+            <h2 className="font-display text-3xl md:text-4xl text-text leading-snug max-w-2xl">
+              I thought awareness was the problem. The evidence changed the problem.
+            </h2>
           </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <PullQuote
-              quote="To go to the library, it like takes you an effort to walk all the way to the library… time is more valued when you're doing it digitally."
-              participant="Participant 2"
-              delay={0}
-            />
-            <PullQuote
-              quote="I have sometimes spent maybe 1 or 2 hours just finding a book or maybe a thesis… it's time-consuming, so I prefer online."
-              participant="Participant 1"
-              delay={0.1}
-            />
-            <PullQuote
-              quote="Even the website, it's kind of tricky. We are not able to easily find where the things are… it's very difficult to find out."
-              participant="Participant 5"
-              delay={0.2}
-            />
+
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 items-start">
+
+            {/* Left: narrative */}
+            <FadeUp delay={0.05}>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+                Affinity mapping initially made awareness look like the dominant issue. Students often did not know about specific databases, workshops, or digital tools.
+              </p>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+                But awareness did not translate into use.
+              </p>
+              <p className="font-sans text-base text-text-secondary leading-relaxed mb-8">
+                When I compared what students knew with what they actually did, a stronger pattern emerged: even students who knew resources existed often avoided them because navigation felt difficult, logins added effort, results felt disconnected from coursework, and external tools offered a faster starting point.{' '}
+                <strong className="text-text font-semibold">That changed the problem I was solving.</strong>
+              </p>
+
+              {/* From / To reframe */}
+              <div className="bg-background rounded-2xl border border-border p-6 mb-8 space-y-4">
+                <div>
+                  <p className="font-sans text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">From</p>
+                  <p className="font-display text-lg text-text-secondary leading-snug">
+                    &ldquo;How might we make students more aware of library resources?&rdquo;
+                  </p>
+                </div>
+                <div className="h-px bg-border" />
+                <div>
+                  <p className="font-sans text-xs font-semibold text-primary uppercase tracking-wider mb-2">To</p>
+                  <p className="font-display text-lg text-text leading-snug">
+                    &ldquo;How might we reduce the friction university students face when trying to discover and engage with credible, course-aligned library resources?&rdquo;
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* Right: before/after frame + Awareness vs Navigation chart */}
+            <FadeUp delay={0.1}>
+              <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-3 mb-3">
+                <div className="bg-surface rounded-2xl border border-border p-6 text-center">
+                  <p className="font-sans text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+                    Initial assumption
+                  </p>
+                  <p className="font-display text-2xl text-text-secondary">Awareness</p>
+                </div>
+                <span aria-hidden="true" className="font-display text-3xl text-primary text-center hidden sm:block">
+                  →
+                </span>
+                <div className="bg-primary/5 rounded-2xl border border-primary/20 p-6 text-center">
+                  <p className="font-sans text-xs font-semibold text-primary uppercase tracking-wider mb-3">
+                    Evidence-based problem
+                  </p>
+                  <ul className="font-display text-base text-text leading-snug space-y-1">
+                    <li>Discovery friction</li>
+                    <li>Navigation</li>
+                    <li>Course relevance</li>
+                    <li>Workflow disconnect</li>
+                  </ul>
+                </div>
+              </div>
+              <p className="font-sans text-xs font-semibold text-primary uppercase tracking-wider text-center mb-8">
+                Research changed the frame →
+              </p>
+
+              <div className="bg-background rounded-2xl border border-border p-6">
+                <p className="font-sans text-xs font-semibold text-text-muted uppercase tracking-wider mb-5">
+                  Awareness vs. Navigation — Data from Participant Interviews
+                </p>
+                <div className="space-y-5">
+                  {[
+                    { known: 'Introduced to resources during orientation', used: 'Actually went to use them', pct: 33 },
+                    { known: 'Professors encouraged resource use', used: 'Actually went to use them', pct: 22 },
+                    { known: 'Aware of Tuesdays with Librarian', used: 'Actually attended the workshop', pct: 10 },
+                  ].map((row) => (
+                    <div key={row.known}>
+                      <div className="flex items-center justify-between gap-4 mb-1.5">
+                        <p className="font-sans text-xs text-text-secondary">{row.known}</p>
+                        <p className="font-display text-sm text-primary font-semibold flex-shrink-0">{row.pct}%</p>
+                      </div>
+                      <div className="h-2 rounded-full bg-border overflow-hidden">
+                        <div className="h-full rounded-full bg-primary" style={{ width: `${row.pct}%` }} />
+                      </div>
+                      <p className="font-sans text-[11px] text-text-muted mt-1">{row.used}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeUp>
+
           </div>
         </div>
       </section>
@@ -567,6 +596,71 @@ export default function UsherCaseStudy() {
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-background leading-snug text-balance">
               How might we reduce the navigation friction university students face when trying to discover and engage with credible, course-aligned library resources?
             </h2>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ── Exploring the Solution ── */}
+      <section className="section-padding">
+        <div className="container-inner">
+          <FadeUp className="mb-12">
+            <p className="section-label mb-2">Product Direction</p>
+            <h2 className="font-display text-3xl md:text-4xl text-text leading-snug">
+              Canvas was the strongest workflow fit. It was not feasible to prototype.
+            </h2>
+          </FadeUp>
+
+          <FadeUp delay={0.05} className="mb-10">
+            <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+              I explored several ways to reduce discovery friction, including physical wayfinding, a standalone mobile companion, and surfacing resources directly inside students&rsquo; course workflow.
+            </p>
+            <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+              The strongest conceptual direction was Canvas integration.{' '}
+              <strong className="text-text font-semibold">
+                It removed an entire discovery step: instead of asking students to remember that library resources existed, relevant materials could appear beside the assignments they were already working on.
+              </strong>
+            </p>
+            <p className="font-sans text-base text-text-secondary leading-relaxed mb-5">
+              But an early technical review exposed a real constraint. A functioning Canvas/Blackboard integration required institutional approvals, restricted system access, secure data exchange, and LTI 1.3 compliance—well beyond the timeline and access available for this thesis.
+            </p>
+            <p className="font-sans text-base text-text-secondary leading-relaxed">
+              Rather than present a fake integration as functional, I used a mobile prototype as a vehicle for testing the underlying discovery experience. This direction was also supported by the research:{' '}
+              <strong className="text-text font-semibold">8 of 12 students described mobile searching as convenient and accessible.</strong>
+            </p>
+          </FadeUp>
+
+          {/* Concepts explored */}
+          <FadeUp delay={0.1} className="mb-6">
+            <p className="section-label">Concepts Explored</p>
+          </FadeUp>
+          <FadeUp delay={0.12}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+              <div className="bg-background rounded-2xl border border-border p-6">
+                <p className="font-display text-lg text-text mb-2">Physical wayfinding</p>
+                <p className="font-sans text-sm text-text-secondary leading-relaxed mb-4">
+                  Useful for in-library navigation
+                </p>
+                <span className="tag-pill">Secondary opportunity</span>
+              </div>
+
+              <div className="bg-primary/5 rounded-2xl border border-primary/20 p-6">
+                <p className="font-display text-lg text-text mb-2">Mobile companion</p>
+                <p className="font-sans text-sm text-text-secondary leading-relaxed mb-4">
+                  Testable within thesis constraints
+                </p>
+                <span className="inline-flex items-center px-3 py-1 bg-primary text-background rounded-full text-xs font-sans font-medium">
+                  Chosen prototype vehicle
+                </span>
+              </div>
+
+              <div className="bg-background rounded-2xl border border-border p-6">
+                <p className="font-display text-lg text-text mb-2">Canvas integration</p>
+                <p className="font-sans text-sm text-text-secondary leading-relaxed mb-4">
+                  Best aligned with existing workflow
+                </p>
+                <span className="tag-pill">Strongest long-term fit</span>
+              </div>
+            </div>
           </FadeUp>
         </div>
       </section>
