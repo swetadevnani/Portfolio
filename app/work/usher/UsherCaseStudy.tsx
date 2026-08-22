@@ -243,8 +243,8 @@ export default function UsherCaseStudy() {
           {/* Title */}
           <FadeUp delay={0.1}>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-text leading-tight mb-6 max-w-4xl text-balance">
-              Usher — AI-Powered{' '}
-              <span className="text-primary">Academic Resource</span> App
+              Usher — Personalized{' '}
+              <span className="text-primary">Academic Discovery</span>
             </h1>
           </FadeUp>
 
