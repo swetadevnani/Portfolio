@@ -39,7 +39,7 @@ const spacesProjects = [
   {
     title: 'Amusement Park',
     category: 'Public · Recreation',
-    image: '/images/about-space-1.jpg',
+    image: '/images/amusement-park-hero.jpg',
     href: '/playground/spaces/amusement-park',
   },
   {
