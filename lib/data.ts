@@ -167,3 +167,65 @@ export const navLinks = [
   { label: 'Contact', href: '#contact' },
   { label: 'Resume', href: 'https://drive.google.com/file/d/1YRubZhLS_ZfCz1zraEPSOvsYk74ZOeT1/view?usp=share_link', external: true },
 ]
+
+export type CurrentlyEntry = {
+  title: string
+  note: string
+  meta?: string
+  href?: string
+}
+
+export const currentlyContent = {
+  label: 'Off the clock',
+  headline: 'Things that keep me human',
+  subtitle: "What's on my mind and my nightstand, besides the job hunt.",
+  updated: '23 October 2026',
+  columns: [
+    {
+      kind: 'Writing',
+      icon: 'writing',
+      entries: [
+        {
+          title: 'Shift UX, one week later',
+          note: "Three things that stuck, and one I don't buy.",
+          meta: 'Oct 2026',
+          href: '#',
+        },
+        {
+          title: 'What building an amusement park taught me about stakeholders',
+          note: 'No jargon. Just concrete dust and deadlines.',
+          meta: 'Oct 2026',
+          href: '#',
+        },
+      ] as CurrentlyEntry[],
+    },
+    {
+      kind: 'Reading',
+      icon: 'reading',
+      entries: [
+        {
+          title: 'The Design of Everyday Things',
+          note: 'Re-reading it now that I actually ship things.',
+        },
+        {
+          title: 'The Midnight Library',
+          note: 'Beautifully written. There is some quiet magic in this one.',
+        },
+      ] as CurrentlyEntry[],
+    },
+    {
+      kind: 'Watching',
+      icon: 'watching',
+      entries: [
+        {
+          title: 'The Bear',
+          note: 'A masterclass in how pressure gets designed into a system.',
+        },
+        {
+          title: 'Ted Lasso',
+          note: "One of those shows that makes you forget your phone exists. You just get lost in it.",
+        },
+      ] as CurrentlyEntry[],
+    },
+  ],
+}
