@@ -31,62 +31,50 @@ function FadeIn({
   )
 }
 
+/* The gallery is one full-width lead plate followed by a masonry column
+   flow. Masonry lets every photo keep its own proportions — the portrait
+   signage shot included — without leaving holes in a fixed grid. */
+const lead = {
+  src: '/images/amusement-park-overview.jpg',
+  caption: 'Project overview — site layout and entry experience',
+  aspect: 'aspect-[16/9]',
+}
+
 const images = [
   {
-    src: '/images/amusement-park-overview.jpg',
-    alt: 'Amusement park overview',
-    caption: 'Project overview — site layout and entry experience',
-    aspect: 'aspect-[16/7]',
-    wide: true,
-  },
-  {
     src: '/images/amusement-park-fun-street.jpg',
-    alt: 'Fun Street at dusk, lined with illuminated zone signage',
     caption:
       'Fun Street at dusk — the main spine, with zone signage stacked overhead so visitors can read the whole park from one spot',
     aspect: 'aspect-[4/3]',
-    wide: true,
   },
   {
     src: '/images/amusement-park-entry-signage.jpg',
-    alt: 'Backlit signage board above the arcade entrance',
     caption:
       'Entry signage — six zones named in one backlit board, sized to be read from the far end of the street',
     aspect: 'aspect-[3/4]',
   },
   {
-    src: '/images/amusement-park-zone-planning.jpg',
-    alt: 'Zone planning',
-    caption: 'Zone planning and circulation study',
-    aspect: 'aspect-[4/3]',
-  },
-  {
     src: '/images/amusement-park-arcade-hall.jpg',
-    alt: 'Arcade hall under neon ceiling lighting, with a mezzanine above',
     caption:
       'Arcade hall — neon run along the ceiling to pull people through the depth of the room, with seating on the mezzanine above',
     aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/amusement-park-arcade-floor.jpg',
-    alt: 'Arcade floor with machines arranged around open circulation space',
     caption:
       'Arcade floor — machines held to the edges so the centre stays open and queues never block the route through',
     aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/amusement-park-interior-detail.jpg',
-    alt: 'Interior detail',
     caption: 'Interior detailing — rides zone',
     aspect: 'aspect-[4/3]',
   },
   {
     src: '/images/amusement-park-bowling.jpg',
-    alt: 'Bowling alley washed in blue light, lane screens above the pins',
     caption:
       'Bowling alley — a single colour wash and converging ceiling lines aim attention down the lanes',
     aspect: 'aspect-[4/3]',
-    wide: true,
   },
 ]
 
@@ -174,9 +162,20 @@ export default function AmusementParkPage() {
             <p className="section-label mb-10">Project Images</p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <FadeIn className="mb-6">
+            <figure>
+              <div className={`relative rounded-2xl overflow-hidden bg-surface-dark shadow-card ${lead.aspect}`}>
+                <img src={lead.src} alt="" className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+              <figcaption className="font-sans text-xs text-text-secondary mt-2.5">
+                {lead.caption}
+              </figcaption>
+            </figure>
+          </FadeIn>
+
+          <div className="columns-1 md:columns-2 gap-6">
             {images.map((img, i) => (
-              <FadeIn key={img.src} delay={(i % 2) * 0.1} className={img.wide ? 'md:col-span-2' : ''}>
+              <FadeIn key={img.src} delay={(i % 2) * 0.1} className="break-inside-avoid mb-6">
                 <figure>
                   <div className={`relative rounded-2xl overflow-hidden bg-surface-dark shadow-card ${img.aspect}`}>
                     <img
