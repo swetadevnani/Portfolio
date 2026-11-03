@@ -70,10 +70,14 @@ const timeline = [
 ]
 
 const interests = [
-  { label: 'Reading', emoji: '📚', desc: 'Psychology, design pattern systems — and the irrational behaviour I can\'t put down.', image: '/images/hobby-reading.jpg' },
-  { label: 'Cycling', emoji: '🚴', desc: 'My favourite way to explore a city and clear my head at the same time.', image: '/images/hobby-cycling.jpg' },
+  { label: 'Reading', emoji: '📚', desc: 'Psychology, design pattern systems — and the irrational behavior I can\'t put down.', image: '/images/hobby-reading.jpg' },
+  { label: 'Cycling', emoji: '🚴', desc: 'My favorite way to explore a city and clear my head at the same time.', image: '/images/hobby-cycling.jpg' },
   { label: 'Dogs', emoji: '🐶', desc: 'Pure, unconditional joy. No experience needed.', image: '/images/hobby-dogs.jpg' },
   { label: 'Good Food', emoji: '🍜', desc: 'New restaurants. New travel. Memories worth every bite.', image: '/images/hobby-food.jpg' },
+  { label: 'Photography', emoji: '📷', desc: 'Mostly flowers, skies and things I would walk past otherwise.', image: '/images/hobby-photography.jpg' },
+  { label: 'Hiking', emoji: '🥾', desc: 'Long walks uphill for a view I could have looked up online.', image: '/images/hobby-hiking.jpg' },
+  { label: 'Binge-watching', emoji: '📺', desc: 'Comfort shows on repeat. I notice the writing more than the plot.', image: '/images/hobby-watching.jpg' },
+  { label: 'My Niece', emoji: '🎂', desc: 'The most honest usability tester I know. Nothing gets a polite review.', image: '/images/hobby-niece.jpg' },
 ]
 
 function FlipCards() {
@@ -205,7 +209,7 @@ export default function AboutPage() {
                 <Image src="/images/sweta-architecture.jpg" alt="Sweta on an architecture project site" fill className="object-cover object-center" />
               </div>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-card">
-                <Image src="/images/about-space-3.jpg" alt="Farmhouse project" fill className="object-cover object-center" />
+                <Image src="/images/about-studio-wall.jpg" alt="Sweta at a studio pin-up of her Ginza Street urban analysis" fill className="object-cover object-center" />
               </div>
             </div>
           </FadeIn>

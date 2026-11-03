@@ -41,7 +41,7 @@ export default function Footer() {
               {siteConfig.name}
               <span className="text-primary">.</span>
             </button>
-            <p className="font-sans text-xs text-text-muted">
+            <p className="font-sans text-xs text-text-secondary">
               © {currentYear} {siteConfig.fullName} · All rights reserved
             </p>
           </div>
@@ -97,7 +97,7 @@ export default function Footer() {
 
         {/* Bottom note */}
         <div className="mt-8 pt-8 border-t border-border text-center">
-          <p className="font-sans text-xs text-text-muted">
+          <p className="font-sans text-xs text-text-secondary">
             Designed and built by Sweta · Figma + Claude + Cursor
           </p>
         </div>

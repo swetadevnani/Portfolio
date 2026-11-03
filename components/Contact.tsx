@@ -46,7 +46,7 @@ export default function Contact() {
                 Let&apos;s make something <span className="text-primary">great</span> together
               </h2>
               <p className="font-sans text-lg text-text-secondary leading-relaxed mb-10">
-                I&apos;m currently open to Product Design and UX opportunities and open to relocation across the U.S.
+                I&apos;m currently open to Product Design and UX roles, and happy to relocate anywhere in the U.S.
               </p>
               {/* Primary CTA — Copy email */}
               <button
