@@ -31,9 +31,11 @@ export default function WorkPage() {
               Case Studies
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((study, index) => (
-                <CaseStudyCard key={study.id} study={study} index={index} />
-              ))}
+              {caseStudies
+                .filter((study) => !study.homeOnly)
+                .map((study, index) => (
+                  <CaseStudyCard key={study.id} study={study} index={index} />
+                ))}
             </div>
           </section>
 

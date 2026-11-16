@@ -47,7 +47,9 @@ export type CaseStudy = {
   tags: string[]
   metrics?: string[]
   comingSoon?: boolean
-  image: string      // filename in /images/, e.g. "nestaid.jpg"
+  /** Featured on the homepage only; /work lists it under Brand instead. */
+  homeOnly?: boolean
+  image: string      // filename in /images/, e.g. "usher.jpg"
   /** Bump this when you replace the image with the same filename (CDN/browser cache). */
   imageCacheBust?: string
   accentColor: string
@@ -69,17 +71,30 @@ export const caseStudies: CaseStudy[] = [
     href: '/work/usher',
   },
   {
-    id: 'nestaid',
-    title: 'NestAid — AI-Powered Caregiving Operations',
-    context: 'SaaS · AI Agents · Product Design',
-    role: 'Product Designer',
+    id: 'sharp',
+    title: 'Sharp Website Redesign',
+    context: 'UX Design · Academic Project',
+    role: 'UX Designer',
     description:
-      'Designed a multi-role scheduling experience for caregiving agencies, turning fragmented shift coordination into clear workflows for admins, care workers, and coordinators.',
-    tags: ['SaaS', 'AI Agents', 'UX Research'],
-    image: 'nestaid.jpg',
-    imageCacheBust: '2',
+      'Minimized support queries and increased user confidence by making product functionality instantly understandable through an interactive virtual clock within a streamlined e-commerce experience.',
+    tags: ['Design Systems', 'Responsive Design', 'Web Design'],
+    metrics: ['40% projected reduction in customer support calls', '6 usability tests conducted', '16-week end-to-end product design'],
+    image: 'sharp.jpg',
     accentColor: '#C1694F',
-    href: '/work/nestaid',
+    href: '/work/sharp',
+  },
+  {
+    id: 'locket-brand',
+    title: 'Locket — Brand Identity for a Memory App',
+    context: 'Brand Identity · Visual System',
+    role: 'Brand & Visual Designer',
+    description:
+      'Built a complete identity for a memory app made for diaspora communities — mood spectrum, palette, type pairing, a wordmark that opens, and the system applied across every surface.',
+    tags: ['Brand Identity', 'Logo Design', 'Visual System'],
+    image: 'locket-merch.webp',
+    accentColor: '#C84B2F',
+    href: '/work/brand/locket',
+    homeOnly: true,
   },
   {
     id: 'constant',
@@ -93,19 +108,6 @@ export const caseStudies: CaseStudy[] = [
     image: 'constant.jpg',
     accentColor: '#9E4E38',
     href: '/work/constant',
-  },
-  {
-    id: 'sharp',
-    title: 'Sharp Website Redesign',
-    context: 'UX Design · Academic Project',
-    role: 'UX Designer',
-    description:
-      'Minimized support queries and increased user confidence by making product functionality instantly understandable through an interactive virtual clock within a streamlined e-commerce experience.',
-    tags: ['Design Systems', 'Responsive Design', 'Web Design'],
-    metrics: ['40% projected reduction in customer support calls', '6 usability tests conducted', '16-week end-to-end product design'],
-    image: 'sharp.jpg',
-    accentColor: '#C1694F',
-    href: '/work/sharp',
   },
 ]
 
